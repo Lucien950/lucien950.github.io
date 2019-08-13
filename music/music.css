@@ -1,0 +1,8 @@
+.container-fluid div{
+  width: 70%;
+  margin: 20px;
+}
+.rh{
+  position: relative;
+  left: 30%
+}
