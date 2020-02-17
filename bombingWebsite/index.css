@@ -30,7 +30,7 @@ p{
 
 /*Individual*/
 #oscar{
-    background-image: url(https://lh5.googleusercontent.com/vXqYq9zY-N-HjcKQrFPe6aSyWyWBG6OmCeBI1mcKoToAlc7gGRnJlKsKCVnnaKiw4YGuAXHYMYG3fUG2ktVa=w1919-h936);
+    background-image: url("Oscar.jpg");
     padding-bottom: 30px;
 }
 #oscar h2{
@@ -40,7 +40,7 @@ p{
 }
 
 #eren{
-    background-image: url(https://lh4.googleusercontent.com/gOv5mah3Z0_CnN7X51XVFaULdDi1jyTjWEHSEhH_2a48fLQr17a6K5Ofgth5aaFmBxYhb7FHcmwJKzoNVLoh=w1919-h936);
+    background-image: url("Eren.jpg");
     padding-top: 10px;
     padding-bottom: 20px;
 }
@@ -54,7 +54,7 @@ p{
 }
 
 #alex{
-    background-image: url(https://lh4.googleusercontent.com/48ZbXxpWudCaqK8m4UF-Ul87-iddmpUGSjgQFf4joFqvRdFQrxJ3zUKBrfEJzOI73lgPH0f7tYnDSnsnFe-W=w1919-h936);
+    background-image: url("Alex.jpg");
     padding-bottom: 13px;
 }
 #alex h2{
@@ -64,7 +64,7 @@ p{
 }
 
 #eren2{
-    background-image: url(https://lh3.googleusercontent.com/OCsxL5qhN_k-rmavR-1Eu1l3uI6jjXP_kaGngrtZF77K1ckCp26zL9F4iOsPebUYnwRN2fhZy8fdGsJ-3fbt=w1919-h936);
+    background-image: url("Eren 2.jpg");
 }
 #eren2 h2{
     font-size: 35px;
@@ -72,7 +72,7 @@ p{
 }
 
 #samir{
-    background-image: url(https://lh6.googleusercontent.com/m_pQl9soHOwLxb8fQycLMFgJefUFbmDECqhPKmNKizwIkHlMCV8FXGfG9grxmsZ6ok4uvrapzHXPxBK8dat1=w1919-h936);
+    background-image: url("Samir.jpg");
     padding-bottom: 8px;
 }
 #samir h2{
@@ -82,7 +82,7 @@ p{
 }
 
 #edwin{
-    background-image: url(https://lh3.googleusercontent.com/EkL3ZEhYLqR0nu_jDPaSQ4iFEX-V07rnN1rWrmzIoaRBQ7IXj_GzwQEou9fED7a3z6ZT-2Vh1xe7rDDu5hWY=w1919-h936);
+    background-image: url("Edwin.jpg");
 }
 #edwin h2{
     margin-top: 40px;
@@ -91,7 +91,7 @@ p{
 }
 
 #edwin2{
-    background-image: url(https://lh5.googleusercontent.com/dF0dgBf5PL7b1i3K4XDtAQem8ExXQkdk3vtP2IMxrlYPdgMOIPTCsxQrNI2N4MCnK4FQ_B0BEUppert2NmmW=w1919-h936);
+    background-image: url("Edwin 2.jpg");
 }
 #edwin2 h2{
     font-size: 38px;
