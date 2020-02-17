@@ -1,3 +1,8 @@
+p{
+    margin: 0px;
+}
+
+/*Box handling*/
 #selectionBox{
     left: 0px;
     margin-right: 30px;
@@ -10,25 +15,91 @@
     flex:1;
 }
 
-
+/*Inside Boxes*/
 .innerBox{
     width:auto;
     padding: 20px;
     transition: all .5s;
 
     /*Background Stuff*/
-    background-image: url(https://lh3.googleusercontent.com/owKJkPQFLPQ-vjSHRj3EvkFvhLUwq3yPyrS7_Bz3uTfH3AbeXvuHRCLSHFOiT9ynFhRbT4aIN0JQna6Jl_95=w1919-h936);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 150%;
 }
+
+/*Individual*/
+#oscar{
+    background-image: url(https://lh5.googleusercontent.com/vXqYq9zY-N-HjcKQrFPe6aSyWyWBG6OmCeBI1mcKoToAlc7gGRnJlKsKCVnnaKiw4YGuAXHYMYG3fUG2ktVa=w1919-h936);
+    padding-bottom: 30px;
+}
+#oscar h2{
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 30px;
+}
+
+#eren{
+    background-image: url(https://lh4.googleusercontent.com/gOv5mah3Z0_CnN7X51XVFaULdDi1jyTjWEHSEhH_2a48fLQr17a6K5Ofgth5aaFmBxYhb7FHcmwJKzoNVLoh=w1919-h936);
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+#eren h2{
+    font-size: 34px;
+    line-height: 40px;
+}
+#eren p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#alex{
+    background-image: url(https://lh4.googleusercontent.com/48ZbXxpWudCaqK8m4UF-Ul87-iddmpUGSjgQFf4joFqvRdFQrxJ3zUKBrfEJzOI73lgPH0f7tYnDSnsnFe-W=w1919-h936);
+    padding-bottom: 13px;
+}
+#alex h2{
+    font-size: 39px;
+    margin-top: 40;
+    margin-bottom: 10px;
+}
+
+#eren2{
+    background-image: url(https://lh3.googleusercontent.com/OCsxL5qhN_k-rmavR-1Eu1l3uI6jjXP_kaGngrtZF77K1ckCp26zL9F4iOsPebUYnwRN2fhZy8fdGsJ-3fbt=w1919-h936);
+}
+#eren2 h2{
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+#samir{
+    background-image: url(https://lh6.googleusercontent.com/m_pQl9soHOwLxb8fQycLMFgJefUFbmDECqhPKmNKizwIkHlMCV8FXGfG9grxmsZ6ok4uvrapzHXPxBK8dat1=w1919-h936);
+    padding-bottom: 30px;
+}
+#samir h2{
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+#edwin{
+    background-image: url(https://lh3.googleusercontent.com/EkL3ZEhYLqR0nu_jDPaSQ4iFEX-V07rnN1rWrmzIoaRBQ7IXj_GzwQEou9fED7a3z6ZT-2Vh1xe7rDDu5hWY=w1919-h936);
+}
+#edwin h2{
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+#edwin2{
+    background-image: url(https://lh5.googleusercontent.com/dF0dgBf5PL7b1i3K4XDtAQem8ExXQkdk3vtP2IMxrlYPdgMOIPTCsxQrNI2N4MCnK4FQ_B0BEUppert2NmmW=w1919-h936);
+}
+#edwin2 h2{
+    font-size: 38px;
+    margin-bottom: 17px;
+}
+
 .innerBox:hover{
     transform: scale(1.05);
     box-shadow: 5px 24px 30px 0px rgba(0,0,0,0.33);
 }
 .innerBox h2{
     font-family: Lato;
-    font-size: 40px;
-    line-height: 50px;
     color: white;
     margin:0px;
     margin-top: 50px;
@@ -41,10 +112,17 @@
     color: white;
 }
 
+
+/*Some text stuff*/
+.mainBox{
+    padding: 10px;
+}
 #mainIdeas{
     font-family: Lato;
+    color: black;
+
     text-align: right;
-    font-size: 80px;
+    font-size: 60px;
     position: relative;
     top: 30px;
     right: 20px;
