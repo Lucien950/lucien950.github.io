@@ -71,9 +71,10 @@ p{
 
 #samir{
     background-image: url(https://lh6.googleusercontent.com/m_pQl9soHOwLxb8fQycLMFgJefUFbmDECqhPKmNKizwIkHlMCV8FXGfG9grxmsZ6ok4uvrapzHXPxBK8dat1=w1919-h936);
-    padding-bottom: 30px;
+    padding-bottom: 8px;
 }
 #samir h2{
+    margin-top: 20px;
     font-size: 35px;
     margin-bottom: 20px;
 }
@@ -82,6 +83,7 @@ p{
     background-image: url(https://lh3.googleusercontent.com/EkL3ZEhYLqR0nu_jDPaSQ4iFEX-V07rnN1rWrmzIoaRBQ7IXj_GzwQEou9fED7a3z6ZT-2Vh1xe7rDDu5hWY=w1919-h936);
 }
 #edwin h2{
+    margin-top: 40px;
     font-size: 36px;
     margin-bottom: 25px;
 }
