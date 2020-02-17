@@ -9,8 +9,6 @@ p{
 /*Box handling*/
 #selectionBox{
     left: 0px;
-    margin-right:75px;
-    margin-left: 75px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
