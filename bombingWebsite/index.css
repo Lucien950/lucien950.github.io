@@ -1,6 +1,7 @@
 #selectionBox{
     width: 100%;
     left: 0px;
+    margin-right: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
