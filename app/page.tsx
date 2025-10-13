@@ -58,7 +58,7 @@ export default function Home() {
       <section className="container max-w-3xl mx-auto text-xl text-white/80">
         <div className="my-36">
           <p className="text-justify mb-4">
-            i'm a student at the University of British Columbia pursuing a degree in Honours Computer Science and Mathematics.
+            i&apos;m a student at the University of British Columbia pursuing a degree in Honours Computer Science and Mathematics.
             i am passionate about computer/firmware systems, controls systems (applied in vehicle dynamics), applied mathematics in numerical methods, and design.
             i design intelligent computer controlled systems to effectively navigate real world uncertainty.
           </p>
@@ -115,7 +115,7 @@ export default function Home() {
           suppress_line
         >
           <ul className="list-disc list-inside text-sm">
-            <li> Member of UBC Division 1 Team ('23, '24), competing in weekly contests, International Collegiate Programming Contest (ICPC) </li>
+            <li> Member of UBC Division 1 Team (&apos;23, &apos;24), competing in weekly contests, International Collegiate Programming Contest (ICPC) </li>
             <li> 2nd place in Division 2 at ICPC Pacific Northwest (2022), completed contest using Python and C++.  </li>
             <li> Achieved top 10% in Canadian Computing Competition Senior Division from Grade 10-12.  </li>
             <li> Developed and optimized complex data structures and algorithms based on mathematical principles </li>

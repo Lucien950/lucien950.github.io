@@ -10,9 +10,9 @@ export default function FormulaPage() {
 				<div>
 					<h1 className="text-3xl font-bold uppercase mb-3">UBC Formula Electric</h1>
 					<section className="text-white/50">
-						<p>'22 Sensors Firmware</p>
-						<p>'23 Dashboard Lead</p>
-						<p>'24-'26 Software Director</p>
+						<p>&apos;22 Sensors Firmware</p>
+						<p>&apos;23 Dashboard Lead</p>
+						<p>&apos;24-&apos;26 Software Director</p>
 					</section>
 				</div>
 
@@ -51,7 +51,7 @@ export default function FormulaPage() {
 					<img alt="Software Team 2023" src="/formula/software_team_23.JPG" className="mb-4" />
 					<img alt="Software Team 2024" src="/formula/software_team_24.png" className="mb-4" />
 					<div className="w-full h-full bg-white/10 grid place-items-center">
-						<p className="font-bold text-lg">'26</p>
+						<p className="font-bold text-lg">&apos;26</p>
 					</div>
 
 					<h2 className="col-span-2 font-bold text-xl">COMPETITION</h2>
@@ -59,7 +59,7 @@ export default function FormulaPage() {
 					<img src="/formula/comp_24.jpg" alt="" className="mb-4" />
 					<img src="/formula/comp_25.jpg" alt="" className="mb-4" />
 					<div className="w-full h-full bg-white/10 grid place-items-center">
-						<p className="font-bold text-lg">'26</p>
+						<p className="font-bold text-lg">&apos;26</p>
 					</div>
 				</div>
 			</article>
