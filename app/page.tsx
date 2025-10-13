@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Download, EECE, IconExternalLink, ICPC, Rivian, UBCFE } from "./icons";
+import { Download, EECE, IconExternalLink, ICPC, JHY, Rivian, UBCFE } from "./icons";
 import { abc_diatype, albra, albra_text, neue_montreal, ttinterfaces } from "./fonts";
 
 function HeaderLink({ href, children, order }: { href: string; children: React.ReactNode, order: number }) {
@@ -47,7 +47,8 @@ function ResumeExperience({ children, company, title, suppress_line, link }:
 
 enum CardCompany {
   UBCFE,
-  Rivian
+  Rivian,
+  ICPC
 }
 
 function CompanyLogo({ company }: { company: CardCompany }) {
@@ -56,6 +57,8 @@ function CompanyLogo({ company }: { company: CardCompany }) {
       return <UBCFE className="size-14" />;
     case CardCompany.Rivian:
       return <Rivian className="size-10 fill-white" />;
+    case CardCompany.ICPC:
+      return <ICPC className="size-10" />;
     default:
       return <div className="size-10 bg-white/10" />;
   }
@@ -108,7 +111,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container max-w-3xl mx-auto mb-20">
+      <section className="container max-w-3xl mx-auto mb-20 pr-2 md:pr-0">
         <div className="mb-6 flex flex-row items-end gap-4">
           <h2 className={`text-3xl font-light text-gray-300 ${albra.className} leading-none`}>resume</h2>
           <Link href="/resume.pdf" target="_blank" title="Download PDF Resume">
@@ -127,6 +130,7 @@ export default function Home() {
         <ResumeExperience company="Controls Research @ UBC EECE" title="Student Researcher | 2025-2026">
           <div className="w-full h-full"> <EECE className="h-full w-full" /> </div>
           <ul className="list-disc list-inside text-sm">
+            <li>Conducted controls research under the supervision of Professor Alberto Padoan</li>
             <li>Developed a controls framework for a high performance formula-style car</li>
             <li>Implemented controller with data-predictive controls</li>
             <li>Developed vehicle models to drive MPC/DPC framework</li>
@@ -145,7 +149,7 @@ export default function Home() {
             <li> Implemented sensor processing in C for 9 sensors, 3 communication protocols (ADC, I2C, SPI), broadcasting over CAN bus.  </li>
           </ul>
         </ResumeExperience>
-        <ResumeExperience company="UBC Competitive Programming Team" title="Division 1 Competitor | 2022-2026" suppress_line>
+        <ResumeExperience company="UBC Competitive Programming Team" title="Division 1 Competitor | 2022-2026">
           <div className="bg-[#E2E8F0] h-full w-full p-2 rounded-full"> <ICPC className="h-full w-full" /> </div>
           <ul className="list-disc list-inside text-sm">
             <li> Member of UBC Division 1 Team (&apos;23, &apos;24), competing in weekly contests, International Collegiate Programming Contest (ICPC) </li>
@@ -154,17 +158,31 @@ export default function Home() {
             <li> Developed and optimized complex data structures and algorithms based on mathematical principles </li>
           </ul>
         </ResumeExperience>
+        <ResumeExperience company="JHY Electrical" title="Principal Fullstack Developer | 2020-2022" suppress_line>
+          <div className="h-full w-full rounded-full bg-white p-2">
+            <JHY className="h-full w-full" />
+          </div>
+          <ul className="list-disc list-inside text-sm">
+            <li>Established web presence for local (Ottawa) electronics business, enabling online catalogue/orders, deployed on Vercel.</li>
+            <li>Designed UX, implemented UI built with NextJS/React app in Typescript, styling with TailwindCSS, ShadCN components.</li>
+            <li>Developed CRUD backend API interfacing with PostgreSQL database, PayPal Orders/Stripe Payment Intents Server-Side API.</li>
+            <li>Ensured confidence in functionality through tests implemented across the entire stack with Jest and Playwright.</li>
+          </ul>
+        </ResumeExperience>
       </section>
 
       <section>
         <h2 className={`text-2xl text-center ${albra.className}`}>notable projects</h2>
-        <div className="columns-3 [&>*]:break-inside-avoid gap-6 mt-6 mx-4">
+        <div className="columns-lg [&>*]:break-inside-avoid gap-6 mt-6 mx-4">
           <Card title="Dashboard Electronics" company_logo={CardCompany.UBCFE} link="/projects/dashboard" image_url="/formula/comp_dashboard.jpg" image_height_px={330} />
           <Card title="Vehicle Controls" company_logo={CardCompany.UBCFE} link="/projects/controls" image_url="" />
+          <Card title="Vehicle Modelling" company_logo={CardCompany.UBCFE} link="/projects/sim" image_url="" />
+          <Card title="Vehicle Firmware" company_logo={CardCompany.UBCFE} link="/projects/formula_firmware" image_url="" />
           <Card title="PseudoECU" company_logo={CardCompany.Rivian} link="/rivian#pseudoecu" image_url="" />
           <Card title="Rivsniffer" company_logo={CardCompany.Rivian} link="/rivian#rivsniffer" image_url="" />
           <Card title="Netlogger" company_logo={CardCompany.Rivian} link="/rivian#netlogger" image_url="" />
           <Card title="Nexus" company_logo={CardCompany.Rivian} link="/rivian#nexus" image_url="" />
+          <Card title="Competitive Programming Writeups" company_logo={CardCompany.ICPC} link="/writeups" image_url="" />
         </div>
       </section>
     </div>
