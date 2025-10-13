@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Download, EECE, IconExternalLink, ICPC, Rivian, UBCFE } from "./icons";
+import { abc_diatype, albra, albra_text, neue_montreal, ttinterfaces } from "./fonts";
 
 function HeaderLink({ href, children, order }: { href: string; children: React.ReactNode, order: number }) {
   return (
@@ -11,17 +12,24 @@ function HeaderLink({ href, children, order }: { href: string; children: React.R
   )
 }
 
-function ResumeExperience({ children, company, title, logo, suppress_line }:
-  { children: React.ReactNode, company: string, title: string, logo?: React.ReactNode, suppress_line?: boolean }
+function ResumeExperience({ children, company, title, suppress_line, link }:
+  { children: Array<React.ReactNode>, company: string, title: string, suppress_line?: boolean, link?: string }
 ) {
   return (
     <div className="grid gap-x-4" style={{ gridTemplateColumns: 'min-content auto' }}>
       <div className="size-15 border-6 border-(--background-start)">
-        {logo}
+        {children[0]}
       </div>
-      <div className="flex flex-row items-center justify-between">
-        <h3 className="text-xl">{company}</h3>
-        <h4 className="text-sm text-white/80">
+      <div className="flex flex-col justify-center mb-2 md:mb-0 md:flex-row md:items-center md:justify-between">
+        {
+          link
+            ? <Link href={link} className="hover:underline flex flex-row items-center">
+              <h3 className={`text-lg md:text-xl font-medium ${neue_montreal.className}`}>{company}</h3>
+              {link && <IconExternalLink className="inline size-4 ml-1" strokeWidth={2} />}
+            </Link>
+            : <h3 className={`text-lg md:text-xl font-medium ${neue_montreal.className}`}>{company}</h3>
+        }
+        <h4 className={`text-xs md:text-sm text-white/80 ${neue_montreal.className}`}>
           {title}
         </h4>
       </div>
@@ -30,9 +38,41 @@ function ResumeExperience({ children, company, title, logo, suppress_line }:
           ? <div></div>
           : <div className="border-l border-3 border-white/20 w-0 mx-auto"></div>
       }
-      <div className="mb-4">
-        {children}
+      <div className={`mb-4 text-white/70 text-justify ${abc_diatype.className}`}>
+        {children[1]}
       </div>
+    </div>
+  )
+}
+
+enum CardCompany {
+  UBCFE,
+  Rivian
+}
+
+function CompanyLogo({ company }: { company: CardCompany }) {
+  switch (company) {
+    case CardCompany.UBCFE:
+      return <UBCFE className="size-14" />;
+    case CardCompany.Rivian:
+      return <Rivian className="size-10 fill-white" />;
+    default:
+      return <div className="size-10 bg-white/10" />;
+  }
+}
+
+function Card({ title, company_logo, link, image_url, image_height_px }:
+  { title: string, company_logo: CardCompany, link: string, image_url: string, image_height_px?: number }
+) {
+  return (
+    <div className="mb-4">
+      <Link href={link}>
+        <img src={image_url} alt="" className="w-full object-cover" style={{ height: image_height_px ? `${image_height_px}px` : 'auto' }} />
+        <div className="flex flex-row items-center justify-between">
+          <h3 className="font-medium">{title}</h3>
+          <CompanyLogo company={company_logo} />
+        </div>
+      </Link>
     </div>
   )
 }
@@ -43,20 +83,20 @@ export default function Home() {
       <header style={{ backgroundImage: 'radial-gradient(ellipse 122% 94% at 30% 0%, rgba(15, 15, 17, 0.5), rgba(15, 15, 17)), url(/header.png)' }}
         className="bg-no-repeat bg-cover"
       >
-        <div className="h-[50vh]">
-          <div className="flex flex-row gap-x-8 container mx-auto justify-end items-end h-full flex-wrap">
+        <div className="h-[50vh] flex flex-col justify-end mb-4 sm:mb-0">
+          <div className={`inline-flex flex-row gap-x-8 gap-y-2 container mx-auto justify-end items-end flex-wrap ${albra_text.className}`}>
             <HeaderLink href="https://www.linkedin.com/in/edwin-zheng-1684a4198" order={1}>linkedin.com/in/edwin-zheng</HeaderLink>
             <HeaderLink href="https://github.com/lucien950" order={2}>github.com/lucien950</HeaderLink>
             <HeaderLink href="https://artstation.com/lucien950" order={3}>artstation.com/lucien950</HeaderLink>
           </div>
         </div>
-        <h1 className="text-[13.8vw] font-bold text-center leading-none pointer-events-none">
+        <h1 className={`text-[29vw] md:text-[14vw] text-center leading-none pointer-events-none ${albra.className}`}>
           EDWIN ZHENG
         </h1>
       </header>
 
       <section className="container max-w-3xl mx-auto text-xl text-white/80">
-        <div className="my-36">
+        <div className={`my-36 ${neue_montreal.className}`}>
           <p className="text-justify mb-4">
             i&apos;m a student at the University of British Columbia pursuing a degree in Honours Computer Science and Mathematics.
             i am passionate about computer/firmware systems, controls systems (applied in vehicle dynamics), applied mathematics in numerical methods, and design.
@@ -69,16 +109,14 @@ export default function Home() {
       </section>
 
       <section className="container max-w-3xl mx-auto mb-20">
-        <div className="mb-4 flex flex-row items-center gap-2">
-          <h2 className="text-3xl font-medium text-gray-300">resume</h2>
+        <div className="mb-6 flex flex-row items-end gap-4">
+          <h2 className={`text-3xl font-light text-gray-300 ${albra.className} leading-none`}>resume</h2>
           <Link href="/resume.pdf" target="_blank" title="Download PDF Resume">
             <Download className="size-6 stroke-white opacity-70 hover:opacity-100 transition-opacity" strokeWidth={2} />
           </Link>
         </div>
-        <ResumeExperience
-          company="Rivian" title="System HIL, Infotainment Integration | Summer 2024, 2025"
-          logo={<div className="rounded-full bg-[#FFAC00] p-3 h-full w-full"> <Rivian className="h-full w-full fill-white" /> </div>}
-        >
+        <ResumeExperience company="Rivian" title="System HIL, Infotainment Integration | Summer 2024, 2025" link="/work/rivian">
+          <div className="rounded-full bg-[#FFAC00] p-3 h-full w-full"> <Rivian className="h-full w-full fill-white" /> </div>
           <ul className="list-disc list-inside text-sm">
             <li> Designed and optimized software-based hardware test infrastructure, coordinating bench tools to create realistic test scenarios.  </li>
             <li> Optimized C++ based BLF logger (FDCAN/ETH/LIN), reduced dropped packets by 95%, improved logging rate by 30% </li>
@@ -86,18 +124,16 @@ export default function Home() {
             <li> Led foundational architectural overhaul of test tooling by redesigning core UDS API, enabling expression of complex behaviours.  </li>
           </ul>
         </ResumeExperience>
-        <ResumeExperience
-          company="Controls Research @ UBC EECE" title="Student Researcher | 2025-2026"
-          logo={<div className="w-full h-full"> <EECE className="h-full w-full" /> </div>}
-        >
+        <ResumeExperience company="Controls Research @ UBC EECE" title="Student Researcher | 2025-2026">
+          <div className="w-full h-full"> <EECE className="h-full w-full" /> </div>
           <ul className="list-disc list-inside text-sm">
-            <li></li>
+            <li>Developed a controls framework for a high performance formula-style car</li>
+            <li>Implemented controller with data-predictive controls</li>
+            <li>Developed vehicle models to drive MPC/DPC framework</li>
           </ul>
         </ResumeExperience>
-        <ResumeExperience
-          company="UBC Formula Electric" title="Software Director | 2022-2026"
-          logo={<div className="bg-[#001126] h-full w-full p-1 rounded-full"><UBCFE className="w-full h-full" /></div>}
-        >
+        <ResumeExperience company="UBC Formula Electric" title="Software Director | 2022-2026" link="/work/formula">
+          <div className="bg-[#001126] h-full w-full p-1 rounded-full"><UBCFE className="w-full h-full" /></div>
           <ul className="list-disc list-inside text-sm">
             <li> Led 22 Software Devs to 21st (2023), 31st (2024), 46th (2025), in FSAE Michigan, passed all inspections/events first time in school history.  </li>
             <li> Founded of autonomous driving division, designing visual feature detection, SLAM, vehicle controls algorithms.  </li>
@@ -109,11 +145,8 @@ export default function Home() {
             <li> Implemented sensor processing in C for 9 sensors, 3 communication protocols (ADC, I2C, SPI), broadcasting over CAN bus.  </li>
           </ul>
         </ResumeExperience>
-        <ResumeExperience
-          company="UBC Competitive Programming Team" title="Division 1 Competitor | 2022-2026"
-          logo={<div className="bg-[#E2E8F0] h-full w-full p-2 rounded-full"> <ICPC className="h-full w-full" /> </div>}
-          suppress_line
-        >
+        <ResumeExperience company="UBC Competitive Programming Team" title="Division 1 Competitor | 2022-2026" suppress_line>
+          <div className="bg-[#E2E8F0] h-full w-full p-2 rounded-full"> <ICPC className="h-full w-full" /> </div>
           <ul className="list-disc list-inside text-sm">
             <li> Member of UBC Division 1 Team (&apos;23, &apos;24), competing in weekly contests, International Collegiate Programming Contest (ICPC) </li>
             <li> 2nd place in Division 2 at ICPC Pacific Northwest (2022), completed contest using Python and C++.  </li>
@@ -124,7 +157,15 @@ export default function Home() {
       </section>
 
       <section>
-        <h2 className="text-xl text-center">notable projects</h2>
+        <h2 className={`text-2xl text-center ${albra.className}`}>notable projects</h2>
+        <div className="columns-3 [&>*]:break-inside-avoid gap-6 mt-6 mx-4">
+          <Card title="Dashboard Electronics" company_logo={CardCompany.UBCFE} link="/projects/dashboard" image_url="/formula/comp_dashboard.jpg" image_height_px={330} />
+          <Card title="Vehicle Controls" company_logo={CardCompany.UBCFE} link="/projects/controls" image_url="" />
+          <Card title="PseudoECU" company_logo={CardCompany.Rivian} link="/rivian#pseudoecu" image_url="" />
+          <Card title="Rivsniffer" company_logo={CardCompany.Rivian} link="/rivian#rivsniffer" image_url="" />
+          <Card title="Netlogger" company_logo={CardCompany.Rivian} link="/rivian#netlogger" image_url="" />
+          <Card title="Nexus" company_logo={CardCompany.Rivian} link="/rivian#nexus" image_url="" />
+        </div>
       </section>
     </div>
   )

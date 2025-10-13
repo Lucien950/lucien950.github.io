@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Albra Text';
+    src: url('AlbraText-Black.eot');
+    src: local('Albra Text Black'), local('AlbraText-Black'),
+        url('AlbraText-Black.eot?#iefix') format('embedded-opentype'),
+        url('AlbraText-Black.woff2') format('woff2'),
+        url('AlbraText-Black.woff') format('woff'),
+        url('AlbraText-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albra Text';
+    src: url('AlbraText-Light.eot');
+    src: local('Albra Text Light'), local('AlbraText-Light'),
+        url('AlbraText-Light.eot?#iefix') format('embedded-opentype'),
+        url('AlbraText-Light.woff2') format('woff2'),
+        url('AlbraText-Light.woff') format('woff'),
+        url('AlbraText-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albra Text';
+    src: url('AlbraText-Medium.eot');
+    src: local('Albra Text Medium'), local('AlbraText-Medium'),
+        url('AlbraText-Medium.eot?#iefix') format('embedded-opentype'),
+        url('AlbraText-Medium.woff2') format('woff2'),
+        url('AlbraText-Medium.woff') format('woff'),
+        url('AlbraText-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albra Semi';
+    src: url('Albra-Semi.eot');
+    src: local('Albra Semi'), local('Albra-Semi'),
+        url('Albra-Semi.eot?#iefix') format('embedded-opentype'),
+        url('Albra-Semi.woff2') format('woff2'),
+        url('Albra-Semi.woff') format('woff'),
+        url('Albra-Semi.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albra Text';
+    src: url('AlbraText-Bold.eot');
+    src: local('Albra Text Bold'), local('AlbraText-Bold'),
+        url('AlbraText-Bold.eot?#iefix') format('embedded-opentype'),
+        url('AlbraText-Bold.woff2') format('woff2'),
+        url('AlbraText-Bold.woff') format('woff'),
+        url('AlbraText-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albra';
+    src: url('Albra-Medium.eot');
+    src: local('Albra Medium'), local('Albra-Medium'),
+        url('Albra-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Albra-Medium.woff2') format('woff2'),
+        url('Albra-Medium.woff') format('woff'),
+        url('Albra-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albra';
+    src: url('Albra-Regular.eot');
+    src: local('Albra Regular'), local('Albra-Regular'),
+        url('Albra-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Albra-Regular.woff2') format('woff2'),
+        url('Albra-Regular.woff') format('woff'),
+        url('Albra-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albra Text';
+    src: url('AlbraText-Regular.eot');
+    src: local('Albra Text Regular'), local('AlbraText-Regular'),
+        url('AlbraText-Regular.eot?#iefix') format('embedded-opentype'),
+        url('AlbraText-Regular.woff2') format('woff2'),
+        url('AlbraText-Regular.woff') format('woff'),
+        url('AlbraText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albra';
+    src: url('Albra-Bold.eot');
+    src: local('Albra Bold'), local('Albra-Bold'),
+        url('Albra-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Albra-Bold.woff2') format('woff2'),
+        url('Albra-Bold.woff') format('woff'),
+        url('Albra-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albra';
+    src: url('Albra-Light.eot');
+    src: local('Albra Light'), local('Albra-Light'),
+        url('Albra-Light.eot?#iefix') format('embedded-opentype'),
+        url('Albra-Light.woff2') format('woff2'),
+        url('Albra-Light.woff') format('woff'),
+        url('Albra-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albra';
+    src: url('Albra-Black.eot');
+    src: local('Albra Black'), local('Albra-Black'),
+        url('Albra-Black.eot?#iefix') format('embedded-opentype'),
+        url('Albra-Black.woff2') format('woff2'),
+        url('Albra-Black.woff') format('woff'),
+        url('Albra-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Albra Text Semi';
+    src: url('AlbraText-Semi.eot');
+    src: local('Albra Text Semi'), local('AlbraText-Semi'),
+        url('AlbraText-Semi.eot?#iefix') format('embedded-opentype'),
+        url('AlbraText-Semi.woff2') format('woff2'),
+        url('AlbraText-Semi.woff') format('woff'),
+        url('AlbraText-Semi.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
