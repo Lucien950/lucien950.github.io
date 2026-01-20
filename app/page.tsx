@@ -187,7 +187,7 @@ export default function Home() {
           <Card title="Netlogger" company_logo={CardCompany.Rivian} link="/work/rivian#netlogger" image_url="/rivian/netlogger.png" />
           <Card title="Nexus" company_logo={CardCompany.Rivian} link="/work/rivian#nexus" image_url="/rivian/nexus.png" />
           <Card title="Competitive Programming Writeups" company_logo={CardCompany.ICPC} link="/writeups" image_url="/cp/main.jpeg" />
-          <Card title="Booktrail" company_logo={CardCompany.MLH} link="/projects/booktrail" image_url="" />
+          <Card title="Booktrail" company_logo={CardCompany.MLH} link="/projects/booktrail" image_url="/hackathon/booktrail.png" />
         </div>
       </section>
     </div>

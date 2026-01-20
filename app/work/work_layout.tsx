@@ -4,7 +4,7 @@ export default function WorkLayout({ children, banner_image_url }:
 	return (
 		<main>
 			<section>
-				<img src={banner_image_url} alt="Formula" className="w-full h-[42rem] object-cover mb-6" />
+				<img src={banner_image_url} alt="Page Banner" className="w-full h-[42rem] object-cover mb-6" />
 			</section>
 
 			<article className="grid grid-cols-1 lg:grid-cols-3 w-full gap-x-4 container mx-auto px-2">
