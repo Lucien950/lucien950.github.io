@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Download, EECE, IconExternalLink, ICPC, JHY, Rivian, UBCFE } from "./icons";
+import { Download, EECE, IconExternalLink, ICPC, JHY, Rivian, UBCFE, MLH } from "./icons";
 import { abc_diatype, albra, albra_text, neue_montreal } from "./fonts";
 
 function HeaderLink({ href, children, order }: { href: string; children: React.ReactNode, order: number }) {
@@ -48,7 +48,8 @@ function ResumeExperience({ children, company, title, suppress_line, link }:
 enum CardCompany {
   UBCFE,
   Rivian,
-  ICPC
+  ICPC,
+  MLH
 }
 
 function CompanyLogo({ company }: { company: CardCompany }) {
@@ -59,6 +60,8 @@ function CompanyLogo({ company }: { company: CardCompany }) {
       return <Rivian className="size-10 fill-white my-2" />;
     case CardCompany.ICPC:
       return <ICPC className="size-10" />;
+    case CardCompany.MLH:
+      return <MLH className="size-10" />;
     default:
       return <div className="size-10 bg-white/10" />;
   }
@@ -184,6 +187,7 @@ export default function Home() {
           <Card title="Netlogger" company_logo={CardCompany.Rivian} link="/work/rivian#netlogger" image_url="/rivian/netlogger.png" />
           <Card title="Nexus" company_logo={CardCompany.Rivian} link="/work/rivian#nexus" image_url="/rivian/nexus.png" />
           <Card title="Competitive Programming Writeups" company_logo={CardCompany.ICPC} link="/writeups" image_url="/cp/main.jpeg" />
+          <Card title="Booktrail" company_logo={CardCompany.MLH} link="/projects/booktrail" image_url="" />
         </div>
       </section>
     </div>
