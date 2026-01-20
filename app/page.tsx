@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Download, EECE, IconExternalLink, ICPC, JHY, Rivian, UBCFE } from "./icons";
-import { abc_diatype, albra, albra_text, neue_montreal, ttinterfaces } from "./fonts";
+import { abc_diatype, albra, albra_text, neue_montreal } from "./fonts";
 
 function HeaderLink({ href, children, order }: { href: string; children: React.ReactNode, order: number }) {
   return (
@@ -23,8 +23,8 @@ function ResumeExperience({ children, company, title, suppress_line, link }:
       <div className="flex flex-col justify-center mb-2 md:mb-0 md:flex-row md:items-center md:justify-between">
         {
           link
-            ? <Link href={link} className="hover:underline flex flex-row items-center">
-              <h3 className={`text-lg md:text-xl font-medium ${neue_montreal.className}`}>{company}</h3>
+            ? <Link href={link} className="flex flex-row items-center hover:bg-red-400">
+              <h3 className={`text-lg md:text-xl font-medium ${neue_montreal.className} hover:underline`}>{company}</h3>
               {link && <IconExternalLink className="inline size-4 ml-1" strokeWidth={2} />}
             </Link>
             : <h3 className={`text-lg md:text-xl font-medium ${neue_montreal.className}`}>{company}</h3>
@@ -56,7 +56,7 @@ function CompanyLogo({ company }: { company: CardCompany }) {
     case CardCompany.UBCFE:
       return <UBCFE className="size-14" />;
     case CardCompany.Rivian:
-      return <Rivian className="size-10 fill-white" />;
+      return <Rivian className="size-10 fill-white my-2" />;
     case CardCompany.ICPC:
       return <ICPC className="size-10" />;
     default:
@@ -149,7 +149,7 @@ export default function Home() {
             <li> Implemented sensor processing in C for 9 sensors, 3 communication protocols (ADC, I2C, SPI), broadcasting over CAN bus.  </li>
           </ul>
         </ResumeExperience>
-        <ResumeExperience company="UBC Competitive Programming Team" title="Division 1 Competitor | 2022-2026">
+        <ResumeExperience company="UBC Competitive Programming Team" title="Division 1 Competitor | 2022-2026" link="/work/cp">
           <div className="bg-[#E2E8F0] h-full w-full p-2 rounded-full"> <ICPC className="h-full w-full" /> </div>
           <ul className="list-disc list-inside text-sm">
             <li> Member of UBC Division 1 Team (&apos;23, &apos;24), competing in weekly contests, International Collegiate Programming Contest (ICPC) </li>
@@ -175,14 +175,15 @@ export default function Home() {
         <h2 className={`text-2xl text-center ${albra.className}`}>notable projects</h2>
         <div className="columns-lg [&>*]:break-inside-avoid gap-6 mt-6 mx-4">
           <Card title="Dashboard Electronics" company_logo={CardCompany.UBCFE} link="/projects/dashboard" image_url="/formula/comp_dashboard.jpg" image_height_px={330} />
-          <Card title="Vehicle Controls" company_logo={CardCompany.UBCFE} link="/projects/controls" image_url="" />
-          <Card title="Vehicle Modelling" company_logo={CardCompany.UBCFE} link="/projects/sim" image_url="" />
-          <Card title="Vehicle Firmware" company_logo={CardCompany.UBCFE} link="/projects/formula_firmware" image_url="" />
-          <Card title="PseudoECU" company_logo={CardCompany.Rivian} link="/rivian#pseudoecu" image_url="" />
-          <Card title="Rivsniffer" company_logo={CardCompany.Rivian} link="/rivian#rivsniffer" image_url="" />
-          <Card title="Netlogger" company_logo={CardCompany.Rivian} link="/rivian#netlogger" image_url="" />
-          <Card title="Nexus" company_logo={CardCompany.Rivian} link="/rivian#nexus" image_url="" />
-          <Card title="Competitive Programming Writeups" company_logo={CardCompany.ICPC} link="/writeups" image_url="" />
+          <Card title="Vehicle Controls" company_logo={CardCompany.UBCFE} link="/projects/controls" image_url="/formula/controls.png" />
+          <Card title="Vehicle Modelling" company_logo={CardCompany.UBCFE} link="/projects/sim" image_url="/formula/vehicle_model.png" />
+          <Card title="Vehicle Firmware and Build System" company_logo={CardCompany.UBCFE} link="/projects/formula_firmware" image_url="/formula/fsm.png" />
+          <Card title="Tracksight" company_logo={CardCompany.UBCFE} link="/projects/tracksight" image_url="/formula/tracksight.png" />
+          <Card title="PseudoECU" company_logo={CardCompany.Rivian} link="/work/rivian#pseudoecu" image_url="/rivian/pecu_docs.png" />
+          <Card title="Rivsniffer" company_logo={CardCompany.Rivian} link="/work/rivian#rivsniffer" image_url="/rivian/rivsniffer.png" />
+          <Card title="Netlogger" company_logo={CardCompany.Rivian} link="/work/rivian#netlogger" image_url="/rivian/netlogger.png" />
+          <Card title="Nexus" company_logo={CardCompany.Rivian} link="/work/rivian#nexus" image_url="/rivian/nexus.png" />
+          <Card title="Competitive Programming Writeups" company_logo={CardCompany.ICPC} link="/writeups" image_url="/cp/main.jpeg" />
         </div>
       </section>
     </div>

@@ -42,15 +42,15 @@ export default function RivianPage() {
 				<p className="italic text-white/70 col-span-full text-sm">pictured above: ricardo, sam, kate (another intern), myself, chris, john, diego. i worked closely with my mentor chris, and sam who gave me the netlogger project</p>
 				<p className="col-span-full">Three major projects I worked on during my internship with this team</p>
 
-				<h3 className="col-span-full font-semibold text-2xl">Rivsniffer</h3>
+				<h3 className="col-span-full font-semibold text-2xl" id="rivsniffer">Rivsniffer</h3>
 				<p>PowCon was a python utility used to control power supplies in the HIL testing loop</p>
 
-				<h3 className="col-span-full font-semibold text-2xl">Nexus</h3>
+				<h3 className="col-span-full font-semibold text-2xl" id="nexus">Nexus</h3>
 				<p className="col-span-full">
 					Nexus was a tool used internally to dispatch HIL test cases to test benches, and integrated it with existing tools to create realistic test scenarios.
 				</p>
 
-				<h3 className="col-span-full font-semibold text-2xl">Netlogger</h3>
+				<h3 className="col-span-full font-semibold text-2xl" id="netlogger">Netlogger</h3>
 				<p className="col-span-full">
 					Netlogger was a tool used to collect and analyze logs from the HIL testing loop, providing insights into system performance and behavior.
 				</p>
@@ -64,6 +64,8 @@ export default function RivianPage() {
 
 				<img src="/rivian/antonio.jpg" alt="Antonio and I" className="mt-4 h-[30rem] object-cover w-full" />
 				<p className="italic text-white/70 text-sm mt-4">my manager antonio rodriguez. he inspired the pseudoecu project, and gave me guidance to navigate working in the infotainment team.</p>
+
+				<h3 className="col-span-full font-semibold text-2xl" id="pseudoecu">PseudoECU</h3>
 				<img src="/rivian/pecu_docs.png" className="col-span-full w-full mt-4" alt="Pseudo ECU Block Diagram" />
 			</div>
 		</WorkLayout>
