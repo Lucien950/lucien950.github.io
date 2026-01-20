@@ -47,11 +47,9 @@ export default function FormulaPage() {
 
 				<h2 className="lg:col-span-2 font-bold text-xl">SOFTWARE TEAM</h2>
 				<img alt="Software Team 2022" src="/formula/software_team_22.jpg" className="mb-4" />
-				<img alt="Software Team 2023" src="/formula/software_team_23.JPG" className="mb-4" />
-				<img alt="Software Team 2024" src="/formula/software_team_24.png" className="mb-4" />
-				<div className="w-full h-full bg-white/10 grid place-items-center mb-4">
-					<p className="font-bold text-lg">&apos;26</p>
-				</div>
+				<img alt="Software Team 2023" src="/formula/software_team_23.jpg" className="mb-4" />
+				<img alt="Software Team 2024" src="/formula/software_team_24.jpg" className="mb-4" />
+				<img alt="Software Team 2025" src="/formula/software_team_25.jpg" className="mb-4" />
 
 				<h2 className="lg:col-span-2 font-bold text-xl">COMPETITION</h2>
 				<img src="/formula/comp_23.png" alt="" className="mb-4" />
