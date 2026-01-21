@@ -54,7 +54,7 @@ export default function LC312() {
 				<img src="/writeups/312_first_approach.png" alt="" />
 				<p>
 					This approach fails as the subproblems are not independent.
-					For example while solving the [1,1] subproblem, we don't know how many balloons remain in the [3,5] subproblem.
+					For example while solving the [1,1] subproblem, we don&apos;t know how many balloons remain in the [3,5] subproblem.
 					This is a problem as depending on which balloons are popped in the [3,5] subproblem, the score achieved by popping the single balloon in the [1,1] subproblem is different.
 				</p>
 				<p>
@@ -78,12 +78,12 @@ export default function LC312() {
 				<p>
 					<ReactKatex>
 						We let $dp[i][j]$ to be the solution to the subproblem given all balloons $[0,i-1]$ and $[j+1,n)$ (namely $[0,n) \setminus [i,j]$) are already revived.
-						In particular, we actually don't care if all of $[0,i-1)$ and $(j+1,n)$ are revived, as long as $i-1$ and $j+1$ are revived,
+						In particular, we actually don&apos;t care if all of $[0,i-1)$ and $(j+1,n)$ are revived, as long as $i-1$ and $j+1$ are revived,
 						the score only depends on the immediate neighbors of the range being revived.
 					</ReactKatex>&nbsp;
 					I only force <b>ALL</b> the balloons to be revived because it is easier to think about the problem this way.
-					I mention this because it is important to realize that we aren't only considering subproblems with contiguous outside ranges,
-					and that's where most of the sparse cases are hiding.
+					I mention this because it is important to realize that we aren&apos;t only considering subproblems with contiguous outside ranges,
+					and that&apos;s where most of the sparse cases are hiding.
 				</p>
 				<p>
 					<ReactKatex>
@@ -94,7 +94,7 @@ export default function LC312() {
 				<p>
 					<ReactKatex>
 						The trivial DP cases are $dp[i][i]$, where only one balloon needs to be revived.
-						In this case, you revive the balloon and the score is the product of its score and its immediate neighbours' score.
+						In this case, you revive the balloon and the score is the product of its score and its immediate neighbours&apos; score.
 						This corresponds to the code on lines 11, 12.
 					</ReactKatex>
 				</p>
