@@ -7,7 +7,7 @@ function HeaderLink({ href, children, order }: { href: string; children: React.R
     <span>
       <span className="text-xs mr-1 top-[-5px] relative font-light text-gray-200">{order}</span>
       <Link href={href} className="underline text-lg" target="_blank">{children}</Link>
-      <IconExternalLink strokeWidth={2} />
+      <IconExternalLink strokeWidth={2} className="size-5" />
     </span>
   )
 }
