@@ -88,7 +88,7 @@ export function ICPC(props: React.SVGProps<SVGSVGElement>) {
 
 export function IconExternalLink(props: React.SVGProps<SVGSVGElement>) {
 	return (
-		<svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="size-5 inline-block ml-1">
+		<svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 			<path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
 		</svg>
 	)

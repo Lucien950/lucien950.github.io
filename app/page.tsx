@@ -23,8 +23,8 @@ function ResumeExperience({ children, company, title, suppress_line, link }:
       <div className="flex flex-col justify-center mb-2 md:mb-0 md:flex-row md:items-center md:justify-between">
         {
           link
-            ? <Link href={link} className="flex flex-row items-center hover:bg-red-400">
-              <h3 className={`text-lg md:text-xl font-medium ${neue_montreal.className} hover:underline`}>{company}</h3>
+            ? <Link href={link} className="flex flex-row items-center group">
+              <h3 className={`text-lg md:text-xl font-medium ${neue_montreal.className} group-hover:underline decoration-dotted`}>{company}</h3>
               {link && <IconExternalLink className="inline size-4 ml-1" strokeWidth={2} />}
             </Link>
             : <h3 className={`text-lg md:text-xl font-medium ${neue_montreal.className}`}>{company}</h3>
