@@ -1,7 +1,7 @@
 "use client";
 import ReactKatex from "@pkasila/react-katex";
 import ShikiHighlighter from "react-shiki";
-import LinkIcon from "~/components/LinkIcon";
+import WriteupTemplate from "../../WriteupTemplate";
 
 
 const SOLN = String.raw`class Solution:
@@ -29,19 +29,7 @@ const SOLN = String.raw`class Solution:
 
 export default function LC312() {
 	return (
-		<div>
-			<div
-				className="w-full mb-14"
-				style={{ background: "linear-gradient(115deg,#3c7161 7%, #243e38 40%, rgba(28, 28, 30, 1) 66%)" }}
-			>
-				<div className="max-w-[65ch] mx-auto pt-14 pb-8">
-					<h1 className="font-medium text-6xl mb-6">Burst Balloons</h1>
-					<div className="flex flex-row items-center gap-x-4">
-						<LinkIcon href="https://leetcode.com/problems/burst-balloons/" name="LeetCode 312" />
-						<span className="inline-block rounded-full px-3 py-2 bg-white/20 text-sm border border-white">DP</span>
-					</div>
-				</div>
-			</div>
+		<WriteupTemplate title="LeetCode 312 - Burst Balloons" tags={["DP"]} href="https://leetcode.com/problems/burst-balloons/" href_name="LeetCode 312">
 			<article className="prose dark:prose-invert mx-auto">
 
 				<p>
@@ -120,7 +108,7 @@ export default function LC312() {
 				<p>
 					<ReactKatex>
 						{
-							`Namely, we have first iterate from $x\in [1, n)$, then iterate $y\in [0, n-x)$ and choose $(i,j)=(y,x+y)$.
+							`Namely, we have first iterate from $x\\in [1, n)$, then iterate $y\\in [0, n-x)$ and choose $(i,j)=(y,x+y)$.
 							For those confortable with linear algebra,
 							$$
 								\\begin{bmatrix}
@@ -141,6 +129,6 @@ export default function LC312() {
 			<ShikiHighlighter language="python" theme="one-dark-pro" showLineNumbers startingLineNumber={1} className="mx-auto mt-6 container">
 				{SOLN}
 			</ShikiHighlighter>
-		</div>
+		</WriteupTemplate>
 	);
 }
