@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ReactNode } from "react";
 
 function WriteupLink({ children, link }: { children: ReactNode, link: string }) {
-	return <Link href={`/writeups/${link}`}>{children}</Link>
+	return <Link href={`/writeups${link}`}>{children}</Link>
 }
 
 export default function Writeups() {
@@ -10,7 +10,7 @@ export default function Writeups() {
 		<div>
 			<h1>Codeforces</h1>
 			<ul className="list-disc list-inside">
-				<li></li>
+				<li><WriteupLink link="/cf/1071">Round #1071</WriteupLink></li>
 			</ul>
 			<h1>LeetCode</h1>
 			<ul className="list-disc list-inside">
