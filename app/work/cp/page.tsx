@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function CompetitiveProgramming() {
 	return (
-		<WorkLayout banner_image_url="">
+		<WorkLayout banner_image_url="/cp/wall.jpg">
 			<div>
 				<ICPC className="size-14 w-20 mb-6" />
 				<h1 className="text-3xl font-bold uppercase mb-3">UBC ACM, Competitive Programming Team</h1>
@@ -43,9 +43,13 @@ export default function CompetitiveProgramming() {
 				</Link>
 
 
-				<img src="/cp/23.jpg" alt="" className="col-span-2" />
-				<img src="/cp/25_start.jpg" alt="" />
+				<img src="/cp/22_medals.JPG" alt="" className="mb-4" />
+				<img src="/cp/23.jpg" alt="" className="" />
+				<img src="/cp/25_start.jpg" alt="" className="mb-2" />
 				<img src="/cp/25_end.jpeg" alt="" />
+				<p className="text-white/40 col-span-full mb-4">team YBG, regional 2nd place at ICPC PacNW</p>
+				<img src="/cp/25_medals.jpeg" alt="" className="col-span-full mb-2" />
+				<p className="text-white/40 col-span-full">left to right: Peter Gu, me, Charles Ran, the SFU poach, Rain Zimin Yang, and the Coach Xingyu Zhou</p>
 			</div>
 		</WorkLayout>
 	);

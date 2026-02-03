@@ -129,7 +129,7 @@ export default function Round1071() {
 					The order of the numbers we want to generate looks as follow:
 				</p>
 
-				<p className="text-center font-bold text-2xl font-mono">
+				<div className="text-center font-bold text-2xl font-mono">
 					(i=0) <br />
 					1111111...<br />
 					<div className="border border-white/20 w-full" />
@@ -146,7 +146,7 @@ export default function Round1071() {
 					<span className="text-green-300"><span className="underline">10</span>0</span>1111...<br />
 					<span className="text-green-300"><span className="underline">11</span>0</span>1111...<br />
 					...
-				</p>
+				</div>
 
 				<p>
 					This solution minimizes the number of bit positions whereby there exists a 0 in any row, while preserving a lexographical sorting.

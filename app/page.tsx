@@ -2,11 +2,11 @@ import Link from "next/link";
 import { Download, EECE, IconExternalLink, ICPC, JHY, Rivian, UBCFE, MLH } from "./icons";
 import { abc_diatype, albra, albra_text, neue_montreal } from "./fonts";
 
-function HeaderLink({ href, children, order }: { href: string; children: React.ReactNode, order: number }) {
+function HeaderLink({ href, children, order, new_page }: { href: string; children: React.ReactNode, order: number, new_page?: boolean }) {
   return (
     <span>
-      <span className="text-xs mr-1 top-[-5px] relative font-light text-gray-200">{order}</span>
-      <Link href={href} className="underline text-lg" target="_blank">{children}</Link>
+      <span className="text-xs mr-1 -top-1.25 relative font-light text-gray-200">{order}</span>
+      <Link href={href} className="underline text-lg" target={new_page ? "_blank" : undefined}>{children}</Link>
       <IconExternalLink strokeWidth={2} className="size-5 inline-block mb-1" />
     </span>
   )
@@ -94,6 +94,7 @@ export default function Home() {
             <HeaderLink href="https://www.linkedin.com/in/edwin-zheng-1684a4198" order={1}>linkedin.com/in/edwin-zheng</HeaderLink>
             <HeaderLink href="https://github.com/lucien950" order={2}>github.com/lucien950</HeaderLink>
             <HeaderLink href="https://artstation.com/lucien950" order={3}>artstation.com/lucien950</HeaderLink>
+            <HeaderLink href="#projects" order={4} new_page={false}>projects</HeaderLink>
           </div>
         </div>
         <h1 className={`text-[29vw] md:text-[14vw] text-center leading-none pointer-events-none ${albra.className}`}>
@@ -175,18 +176,18 @@ export default function Home() {
       </section>
 
       <section>
-        <h2 className={`text-2xl text-center ${albra.className}`}>notable projects</h2>
-        <div className="columns-lg [&>*]:break-inside-avoid gap-6 mt-6 mx-4">
-          <Card title="Dashboard Electronics" company_logo={CardCompany.UBCFE} link="/projects/dashboard" image_url="/formula/comp_dashboard.jpg" image_height_px={330} />
-          <Card title="Vehicle Controls" company_logo={CardCompany.UBCFE} link="/projects/controls" image_url="/formula/controls.png" />
-          <Card title="Vehicle Modelling" company_logo={CardCompany.UBCFE} link="/projects/sim" image_url="/formula/vehicle_model.png" />
+        <h2 id="projects" className={`text-2xl text-center ${albra.className}`}>notable projects</h2>
+        <div className="columns-lg *:break-inside-avoid gap-6 mt-6 mx-4">
           <Card title="Vehicle Firmware and Build System" company_logo={CardCompany.UBCFE} link="/projects/formula_firmware" image_url="/formula/fsm.png" />
-          <Card title="Tracksight" company_logo={CardCompany.UBCFE} link="/projects/tracksight" image_url="/formula/tracksight.png" />
+          <Card title="Competitive Programming Writeups" company_logo={CardCompany.ICPC} link="/writeups" image_url="/cp/main.jpeg" />
+          <Card title="Vehicle Controls" company_logo={CardCompany.UBCFE} link="/projects/controls" image_url="/formula/controls.png" />
           <Card title="PseudoECU" company_logo={CardCompany.Rivian} link="/work/rivian#pseudoecu" image_url="/rivian/pecu_docs.png" />
+          <Card title="Dashboard Electronics" company_logo={CardCompany.UBCFE} link="/projects/dashboard" image_url="/formula/comp_dashboard.jpg" image_height_px={330} />
+          <Card title="Vehicle Modelling" company_logo={CardCompany.UBCFE} link="/projects/sim" image_url="/formula/vehicle_model.png" />
+          <Card title="Tracksight" company_logo={CardCompany.UBCFE} link="/projects/tracksight" image_url="/formula/tracksight.png" />
           <Card title="Rivsniffer" company_logo={CardCompany.Rivian} link="/work/rivian#rivsniffer" image_url="/rivian/rivsniffer.png" />
           <Card title="Netlogger" company_logo={CardCompany.Rivian} link="/work/rivian#netlogger" image_url="/rivian/netlogger.png" />
           <Card title="Nexus" company_logo={CardCompany.Rivian} link="/work/rivian#nexus" image_url="/rivian/nexus.png" />
-          <Card title="Competitive Programming Writeups" company_logo={CardCompany.ICPC} link="/writeups" image_url="/cp/main.jpeg" />
           <Card title="Booktrail" company_logo={CardCompany.MLH} link="/projects/booktrail" image_url="/hackathon/booktrail.png" />
         </div>
       </section>

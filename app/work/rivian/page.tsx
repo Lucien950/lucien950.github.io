@@ -56,13 +56,14 @@ export default function RivianPage() {
 				</p>
 
 				<h2 className="text-4xl font-bold col-span-full mb-4">Infotainment Integration</h2>
-				<img src="/rivian/25-interns.jpg" alt="Interns at a SF Giants Game" className="lg:col-span-2" />
+				<img src="/rivian/25-interns.jpg" alt="Interns at a SF Giants Game" className="" />
+				<img src="/rivian/IMG_3096.PNG" alt="Interns meeting with RJ" className="" />
 				<p className="col-span-full mt-4">
 					During my second internship, I decided to switch to the infotainment organization.
 					I was drawn to this team because I was interested in working on embedded operating systems as a continuation of my work on infotainment systems in UBC Formula Electric.
 				</p>
 
-				<img src="/rivian/antonio.jpg" alt="Antonio and I" className="mt-4 h-[30rem] object-cover w-full" />
+				<img src="/rivian/antonio.jpg" alt="Antonio and I" className="mt-4 h-120 object-cover w-full" />
 				<p className="italic text-white/70 text-sm mt-4">my manager antonio rodriguez. he inspired the pseudoecu project, and gave me guidance to navigate working in the infotainment team.</p>
 
 				<h3 className="col-span-full font-semibold text-2xl" id="pseudoecu">PseudoECU</h3>

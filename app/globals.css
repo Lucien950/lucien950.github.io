@@ -21,3 +21,7 @@ body {
       transparent,
       var(--background-end)) var(--background-start);
 }
+
+html {
+  scroll-behavior: smooth;
+}
