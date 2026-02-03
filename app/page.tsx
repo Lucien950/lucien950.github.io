@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Download, EECE, IconExternalLink, ICPC, JHY, Rivian, UBCFE, MLH } from "./icons";
+import { Download, EECE, IconExternalLink, ICPC, JHY, Rivian, UBCFE, MLH, Wrench } from "./icons";
 import { abc_diatype, albra, albra_text, neue_montreal } from "./fonts";
 
 function HeaderLink({ href, children, order, new_page }: { href: string; children: React.ReactNode, order: number, new_page?: boolean }) {
@@ -49,7 +49,8 @@ enum CardCompany {
   UBCFE,
   Rivian,
   ICPC,
-  MLH
+  MLH,
+  LaptopRepair
 }
 
 function CompanyLogo({ company }: { company: CardCompany }) {
@@ -62,6 +63,8 @@ function CompanyLogo({ company }: { company: CardCompany }) {
       return <ICPC className="size-10" />;
     case CardCompany.MLH:
       return <MLH className="size-10" />;
+    case CardCompany.LaptopRepair:
+      return <Wrench className="size-10 dark:fill-white" />;
     default:
       return <div className="size-10 bg-white/10" />;
   }
@@ -192,6 +195,7 @@ export default function Home() {
           <Card title="Netlogger" company_logo={CardCompany.Rivian} link="/work/rivian#netlogger" image_url="/rivian/netlogger.png" />
           <Card title="Nexus" company_logo={CardCompany.Rivian} link="/work/rivian#nexus" image_url="/rivian/nexus.png" />
           <Card title="Booktrail" company_logo={CardCompany.MLH} link="/projects/booktrail" image_url="/hackathon/booktrail.png" />
+          <Card title="Edwin's Laptop Repair Shop" company_logo={CardCompany.LaptopRepair} link="/projects/laptop" image_url="/laptop/xps.jpeg" />
         </div>
       </section>
 
