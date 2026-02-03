@@ -6,7 +6,7 @@ function HeaderLink({ href, children, order, new_page }: { href: string; childre
   return (
     <span>
       <span className="text-xs mr-1 -top-1.25 relative font-light text-gray-200">{order}</span>
-      <Link href={href} className="underline text-lg" target={new_page ? "_blank" : undefined}>{children}</Link>
+      <Link href={href} className="underline text-lg" target={new_page || (new_page == undefined) ? "_blank" : undefined}>{children}</Link>
       <IconExternalLink strokeWidth={2} className="size-5 inline-block mb-1" />
     </span>
   )
@@ -95,6 +95,7 @@ export default function Home() {
             <HeaderLink href="https://github.com/lucien950" order={2}>github.com/lucien950</HeaderLink>
             <HeaderLink href="https://artstation.com/lucien950" order={3}>artstation.com/lucien950</HeaderLink>
             <HeaderLink href="#projects" order={4} new_page={false}>projects</HeaderLink>
+            <HeaderLink href="#blog" order={5} new_page={false}>blog</HeaderLink>
           </div>
         </div>
         <h1 className={`text-[29vw] md:text-[14vw] text-center leading-none pointer-events-none ${albra.className}`}>
@@ -175,9 +176,9 @@ export default function Home() {
         </ResumeExperience>
       </section>
 
-      <section className="relative">
+      <section className="relative" id="projects">
         <div className="sticky top-0 bg-(--background-start)/70 backdrop-blur-lg py-2">
-          <h2 id="projects" className={`text-2xl text-center ${albra.className}`}>notable projects</h2>
+          <h2 className={`text-2xl text-center ${albra.className}`}>notable projects</h2>
         </div>
         <div className="columns-lg *:break-inside-avoid gap-6 mt-4 mx-4">
           <Card title="Vehicle Firmware and Build System" company_logo={CardCompany.UBCFE} link="/projects/formula_firmware" image_url="/formula/fsm.png" />
@@ -192,6 +193,14 @@ export default function Home() {
           <Card title="Nexus" company_logo={CardCompany.Rivian} link="/work/rivian#nexus" image_url="/rivian/nexus.png" />
           <Card title="Booktrail" company_logo={CardCompany.MLH} link="/projects/booktrail" image_url="/hackathon/booktrail.png" />
         </div>
+      </section>
+
+      <section id="blog" className="mx-auto prose dark:prose-invert my-10">
+        <h2 className={`text-2xl text-center ${albra.className} font-light`}>blog</h2>
+        <ul>
+          <li> <Link href="/blog/ai" className="underline text-lg"> [INCOMPLETE] Thoughts on AI </Link> </li>
+          <li> <Link href="/blog/mpc" className="underline text-lg"> An intuitive formulation of Model Predictive Controls </Link> </li>
+        </ul>
       </section>
     </div>
   )
