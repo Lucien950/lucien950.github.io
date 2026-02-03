@@ -29,6 +29,7 @@ export default function Writeups() {
 				<div className="flex flex-wrap items-end flex-row-reverse">
 					<h1 className={`text-8xl uppercase font-medium leading-[0.8] ml-4 ${albra.className}`}>LeetCode</h1>
 					<LeetcodeLink number={312}>Burst Balloons</LeetcodeLink>
+					<LeetcodeLink number={1411}>Number of Ways to Paint N x 3 Grid</LeetcodeLink>
 					<div className="grow-999"></div>
 				</div>
 			</section>
