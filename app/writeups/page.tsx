@@ -8,6 +8,12 @@ function WriteupLink({ children, link }: { children: ReactNode, link: string }) 
 	</Link>
 }
 
+function LeetcodeLink({ children, number }: { children: ReactNode, number: number }) {
+	return <WriteupLink link={`/lc/${number}`}>
+		<span className="text-white/40">{number} /</span> {children}
+	</WriteupLink>
+}
+
 export default function Writeups() {
 	return (
 		<main>
@@ -22,9 +28,7 @@ export default function Writeups() {
 
 				<div className="flex flex-wrap items-end flex-row-reverse">
 					<h1 className={`text-8xl uppercase font-medium leading-[0.8] ml-4 ${albra.className}`}>LeetCode</h1>
-					<WriteupLink link="/lc/312">
-						[312] Burst Balloons
-					</WriteupLink>
+					<LeetcodeLink number={312}>Burst Balloons</LeetcodeLink>
 					<div className="grow-999"></div>
 				</div>
 			</section>

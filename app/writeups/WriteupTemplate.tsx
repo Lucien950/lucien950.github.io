@@ -5,12 +5,12 @@ export default function WriteupTemplate(
 ) {
 	return (
 		<div>
-			<div
+			<header
 				className="w-full mb-14"
 				// TODO randomized gradients
 				style={{ background: "linear-gradient(115deg,#3c7161 7%, #243e38 40%, rgba(28, 28, 30, 1) 66%)" }}
 			>
-				<div className="max-w-[65ch] mx-auto pt-14 pb-8">
+				<div className="max-w-[65ch] mx-auto pt-36 pb-8">
 					<h1 className="font-medium text-6xl mb-6">{title}</h1>
 					<div className="flex flex-row items-center gap-x-4">
 						{
@@ -25,7 +25,7 @@ export default function WriteupTemplate(
 						}
 					</div>
 				</div>
-			</div>
+			</header>
 			{children}
 		</div>
 	);

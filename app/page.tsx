@@ -175,9 +175,11 @@ export default function Home() {
         </ResumeExperience>
       </section>
 
-      <section>
-        <h2 id="projects" className={`text-2xl text-center ${albra.className}`}>notable projects</h2>
-        <div className="columns-lg *:break-inside-avoid gap-6 mt-6 mx-4">
+      <section className="relative">
+        <div className="sticky top-0 bg-(--background-start)/70 backdrop-blur-lg py-2">
+          <h2 id="projects" className={`text-2xl text-center ${albra.className}`}>notable projects</h2>
+        </div>
+        <div className="columns-lg *:break-inside-avoid gap-6 mt-4 mx-4">
           <Card title="Vehicle Firmware and Build System" company_logo={CardCompany.UBCFE} link="/projects/formula_firmware" image_url="/formula/fsm.png" />
           <Card title="Competitive Programming Writeups" company_logo={CardCompany.ICPC} link="/writeups" image_url="/cp/main.jpeg" />
           <Card title="Vehicle Controls" company_logo={CardCompany.UBCFE} link="/projects/controls" image_url="/formula/controls.png" />
