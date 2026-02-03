@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { albra_text, neue_montreal } from './fonts'
 import './globals.css'
 import Link from 'next/link'
+import Nav from './nav'
 
 export const metadata: Metadata = {
   title: 'Edwin Zheng',
@@ -16,6 +17,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
         <link rel="stylesheet" href="https://unpkg.com/katex@0.16.0/dist/katex.min.css" />
       </head>
       <body className={neue_montreal.className}>
+        <Nav />
         {children}
         <footer className="mx-auto container text-white/50">
           <hr />
