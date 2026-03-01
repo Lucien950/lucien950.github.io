@@ -62,7 +62,7 @@ export default function FormulaPage() {
 				</div>
 
 				<div className="col-span-2" >
-					<img src="/formula/group_25.jpg" alt="" />
+					<img src="/formula/group_25.JPG" alt="" />
 					<p className="text-sm mt-2 italic text-white/50">
 						Picture of all the teams from FSAE Michigan 2025. UBC Formula Electric pictured middle left. Joseph Thurston on suicíde watch in car 218.
 					</p>
