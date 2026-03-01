@@ -23,6 +23,7 @@ export default function Writeups() {
 				<div className="flex flex-wrap items-end flex-row">
 					<h1 className={`text-8xl uppercase font-medium leading-[0.8] mr-4 ${albra.className}`}>Codeforces</h1>
 					<WriteupLink link="/cf/1071">Round #1071</WriteupLink>
+					<WriteupLink link="/cf/edu187">Educational #187</WriteupLink>
 					<div className="grow-999"></div>
 				</div>
 
