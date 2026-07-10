@@ -6,7 +6,7 @@ export default function WorkLayout({ children, banner_image_url }:
 	return (
 		<main>
 			<section>
-				<div className="w-full h-168 object-cover mb-6">
+				<div className="w-full h-168 object-cover mb-6 relative">
 					{
 						banner_image_url && <ExportedImage fill src={banner_image_url} alt="Page Banner" className="object-cover" />
 					}
