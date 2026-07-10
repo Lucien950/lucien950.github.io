@@ -27,7 +27,7 @@ export default function FormulaPage() {
 			</div>
 
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4">
-				<p className="lg:col-span-2 text-lg mb-10 text-white/70">
+				<p className="col-span-full text-lg mb-10 text-white/70">
 					UBC Formula Electric is a student design team based out of the University of British Columbia in Vancouver, BC. Each year, we build an electric race car and compete with students from universities across North America. Software team defines the dynamic behaviour of the vehicle through our five subteams: Vehicle Firmware, Battery Management System, Controls, Telemetry and Validation. In this pursuit, we work with members of the electrical and mechanical teams to achieve vehicle performance characteristics.
 				</p>
 
@@ -52,11 +52,11 @@ export default function FormulaPage() {
 					</div>
 				</Link>
 
-				<hr className="lg:col-span-2 mb-4 opacity-35" />
+				<hr className="col-span-full mb-4 opacity-35" />
 
-				<h2 className="lg:col-span-2 font-bold text-xl">MY PROJECTS</h2>
+				<h2 className="col-span-full font-bold text-xl">MY PROJECTS</h2>
 
-				<h2 className="lg:col-span-2 font-bold text-xl">SOFTWARE TEAM</h2>
+				<h2 className="col-span-full font-bold text-xl">SOFTWARE TEAM</h2>
 				<div className="relative h-76 mb-4">
 					<ExportedImage fill src={software_team_22} alt="Software Team 2022" className="object-cover" />
 				</div>
@@ -70,7 +70,7 @@ export default function FormulaPage() {
 					<ExportedImage fill src={software_team_25} alt="Software Team 2025" className="object-cover" />
 				</div>
 
-				<h2 className="lg:col-span-2 font-bold text-xl">COMPETITION</h2>
+				<h2 className="col-span-full font-bold text-xl">COMPETITION</h2>
 				<div className="relative h-85 mb-4">
 					<ExportedImage fill src={comp_23} alt="" className="object-cover" />
 				</div>
@@ -84,7 +84,7 @@ export default function FormulaPage() {
 					<ExportedImage fill src={comp_26} alt="" className="object-cover" />
 				</div>
 
-				<div className="lg:col-span-2" >
+				<div className="col-span-full" >
 					<div className="relative h-64">
 						<ExportedImage fill src={group_25} alt="" className="object-cover" />
 					</div>

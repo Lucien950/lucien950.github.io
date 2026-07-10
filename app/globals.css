@@ -21,3 +21,6 @@ body {
       transparent,
       var(--background-end)) var(--background-start);
 }
+
+/* for touchscreen laptops */
+@custom-variant hover (&:hover);

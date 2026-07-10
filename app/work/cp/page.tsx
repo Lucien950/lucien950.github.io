@@ -15,7 +15,7 @@ export default function CompetitiveProgramming() {
 				</div>
 			</div>
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4">
-				<p className="lg:col-span-2 text-sm mb-4">
+				<p className="col-span-full text-sm mb-4">
 					The UBC ACM Competitive Programming Team is a student organization that competes in the International Collegiate Programming Contest (ICPC) and other competitive programming contests.
 					The team is made up of students from various disciplines who share a passion for problem-solving and algorithmic thinking.
 					As a member of the team, I have had the opportunity to participate in regional and national competitions, honing my skills in algorithms, data structures, and teamwork.
