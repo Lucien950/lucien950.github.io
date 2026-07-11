@@ -11,6 +11,7 @@
   "dependencies": {
     "@pkasila/react-katex": "^1.2.2",
     "@tailwindcss/postcss": "^4.1.18",
+    "motion": "^12.42.2",
     "next": "^16.1.4",
     "next-image-export-optimizer": "^1.20.1",
     "react": "^19",

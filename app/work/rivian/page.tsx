@@ -2,6 +2,12 @@ import { adventure } from "~/app/fonts";
 import WorkLayout from "../work_layout";
 import { Rivian, Link as LinkIcon } from "../../icons";
 import Link from "next/link";
+import syshil from "~/public/rivian/system_hil.png"
+import interns25 from "~/public/rivian/25-interns.jpg"
+import interns25_rj from "~/public/rivian/IMG_3096.png"
+import antonio from "~/public/rivian/antonio.jpg"
+import pecu_docs from "~/public/rivian/pecu_docs.png"
+import ExportedImage from "next-image-export-optimizer";
 
 export default function RivianPage() {
 	return (
@@ -38,7 +44,9 @@ export default function RivianPage() {
 				<hr className="col-span-full my-4 border-[1.5px] border-white/20 rounded-full" />
 
 				<h2 className="text-4xl font-bold col-span-full mb-4">System HIL</h2>
-				<img src="/rivian/system_hil.png" alt="" className="col-span-full w-full mb-2" />
+				<div className="col-span-full w-full mb-2" >
+					<ExportedImage src={syshil} alt="System HIL Team, Summer 2024" />
+				</div>
 				<p className="italic text-white/70 col-span-full text-sm">pictured above: ricardo, sam, kate (another intern), myself, chris, john, diego. i worked closely with my mentor chris, and sam who gave me the netlogger project</p>
 				<p className="col-span-full">Three major projects I worked on during my internship with this team</p>
 
@@ -56,18 +64,20 @@ export default function RivianPage() {
 				</p>
 
 				<h2 className="text-4xl font-bold col-span-full mb-4">Infotainment Integration</h2>
-				<img src="/rivian/25-interns.jpg" alt="Interns at a SF Giants Game" className="" />
-				<img src="/rivian/IMG_3096.PNG" alt="Interns meeting with RJ" className="" />
+
+				<ExportedImage src={interns25} alt="Interns at a SF Giants Game" className="" />
+				<ExportedImage src={interns25_rj} alt="Interns meeting with RJ" className="" />
+
 				<p className="col-span-full mt-4">
 					During my second internship, I decided to switch to the infotainment organization.
 					I was drawn to this team because I was interested in working on embedded operating systems as a continuation of my work on infotainment systems in UBC Formula Electric.
 				</p>
 
-				<img src="/rivian/antonio.jpg" alt="Antonio and I" className="mt-4 h-120 object-cover w-full" />
+				<ExportedImage src={antonio} alt="Antonio and I" className="mt-4 h-120 object-cover" />
 				<p className="italic text-white/70 text-sm mt-4">my manager antonio rodriguez. he inspired the pseudoecu project, and gave me guidance to navigate working in the infotainment team.</p>
 
 				<h3 className="col-span-full font-semibold text-2xl" id="pseudoecu">PseudoECU</h3>
-				<img src="/rivian/pecu_docs.png" className="col-span-full w-full mt-4" alt="Pseudo ECU Block Diagram" />
+				<ExportedImage src={pecu_docs} className="col-span-full mt-4" alt="Pseudo ECU Block Diagram" />
 			</div>
 		</WorkLayout>
 	);

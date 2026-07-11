@@ -102,13 +102,18 @@ enum HighlightTopic {
 
 function Highlighter({ children, selector }: { children: React.ReactNode, selector: HighlightTopic }) {
   return (
-    <span className="relative">
-      <div className={`absolute inset-0 pointer-events-none
-        opacity-0
-        ${selector === HighlightTopic.Lang ? "bg-red-300/80 group-has-[#languages:hover]/resume:opacity-100 group-has-[#languages:checked]/resume:opacity-100" : ""}
-        ${selector === HighlightTopic.Tool ? "bg-yellow-300/80 group-has-[#tools:hover]/resume:opacity-100 group-has-[#tools:checked]/resume:opacity-100" : ""}
-        ${selector === HighlightTopic.Controls ? "bg-blue-300/80 group-has-[#controls:hover]/resume:opacity-100 group-has-[#controls:checked]/resume:opacity-100" : ""}
-        transition-opacity duration-100`}
+    <span
+      className={`relative transition-colors
+        ${selector === HighlightTopic.Lang ? "group-has-[#languages:hover]/resume:text-white group-has-[#languages:checked]/resume:text-white" : ""}
+        ${selector === HighlightTopic.Tool ? "group-has-[#tools:hover]/resume:text-white group-has-[#tools:checked]/resume:text-white" : ""}
+        ${selector === HighlightTopic.Controls ? "group-has-[#controls:hover]/resume:text-white group-has-[#controls:checked]/resume:text-white" : ""}
+      `}
+    >
+      <div className={`absolute h-1/2 bottom-0 pointer-events-none animate-highlightenter hidden -z-10
+        ${selector === HighlightTopic.Lang ? "bg-red-500/60 group-has-[#languages:hover]/resume:inline group-has-[#languages:checked]/resume:inline" : ""}
+        ${selector === HighlightTopic.Tool ? "bg-yellow-500/60 group-has-[#tools:hover]/resume:inline group-has-[#tools:checked]/resume:inline" : ""}
+        ${selector === HighlightTopic.Controls ? "bg-blue-500/60 group-has-[#controls:hover]/resume:inline group-has-[#controls:checked]/resume:inline" : ""}
+      `}
       />
       {children}
     </span>
@@ -122,7 +127,7 @@ export default function Home() {
         <div className="-z-40 absolute w-full h-full scale-110"
           style={{ backgroundImage: 'radial-gradient(ellipse 122% 94% at 30% 0%, rgba(15, 15, 17, 0.5), rgba(15, 15, 17))' }}
         />
-        <ExportedImage src={header} alt="" fill className="-z-50 object-cover scale-105" />
+        <ExportedImage src={header} alt="" fill className="-z-50 object-cover scale-105" loading="eager" />
         <div className="h-[50vh] flex flex-col justify-end mb-4 sm:mb-0">
           <div className={`inline-flex flex-row gap-x-8 gap-y-2 container mx-auto justify-end items-end flex-wrap ${albra_text.className}`}>
             <HeaderLink href="https://www.linkedin.com/in/edwin-zheng-1684a4198" order={1}>linkedin.com/in/edwin-zheng</HeaderLink>
@@ -186,18 +191,20 @@ export default function Home() {
             <Rivian className="h-full w-full fill-white transition-colors" />
           </div>
           <ul className="list-disc list-inside text-sm">
-            <li> Designed and optimized software-based hardware test infrastructure, coordinating bench tools to create realistic test scenarios.  </li>
-            <li> Optimized <Highlighter selector={HighlightTopic.Lang}>C++</Highlighter> based BLF logger (FDCAN/ETH/LIN), reduced dropped packets by 95%, improved logging rate by 30% </li>
+            <li> Optimized software in hardware test infrastructure, coordinating bench tools to create realistic test cases.</li>
+            <li> Optimized <Highlighter selector={HighlightTopic.Lang}>Python</Highlighter>/<Highlighter selector={HighlightTopic.Lang}>C++</Highlighter> based BLF logger (<Highlighter selector={HighlightTopic.Tool}>FDCAN/ETH/LIN</Highlighter>), reduced dropped packets by 95% </li>
             <li> Improved UX for test case development by migrating all testing to full stack <Highlighter selector={HighlightTopic.Lang}>React/NextJS</Highlighter> web app for test action editing.  </li>
-            <li> Led foundational architectural overhaul of test tooling by redesigning core UDS API, enabling expression of complex behaviours.  </li>
+            <li> Led foundational architectural overhaul of test tooling by redesigning core <Highlighter selector={HighlightTopic.Tool}>UDS API</Highlighter>, enabling expression of complex behaviours.</li>
           </ul>
         </ResumeExperience>
         <ResumeExperience company="Controls Research @ UBC EECE" title="Student Researcher | 2025-2026">
           <div className="w-full h-full"> <EECE className="h-full w-full" /> </div>
           <ul className="list-disc list-inside text-sm">
-            <li>Conducted controls research under the supervision of Professor Alberto Padoan</li>
-            <li>Developed a controls framework for a high performance formula-style car</li>
-            <li>Developed vehicle models to drive <Highlighter selector={HighlightTopic.Controls}>MPC</Highlighter> framework</li>
+            <li>Wrote a bachelor&apos;s thesis under the supervision of Professor Alberto Padoan, "Hybrid Autonomous Torque Vectoring Architecture for FSAE Vehicle"</li>
+            <li>Developed a <Highlighter selector={HighlightTopic.Controls}>hybrid autonomous controls framework</Highlighter> for a high performance formula-style car, incorperating elements of traction control, power limiting and torque vectoring, all in <Highlighter selector={HighlightTopic.Lang}>C++</Highlighter></li>
+            <li>Developed vehicle body, tire, battery, powertrain model in <Highlighter selector={HighlightTopic.Lang}>Simulink</Highlighter> to conduct driver in loop (DIL) validation</li>
+            <li>Developed autonomous driving using <Highlighter selector={HighlightTopic.Controls}>MPC</Highlighter> framework, implemented through <Highlighter selector={HighlightTopic.Controls}>quadratic programming</Highlighter> solver</li>
+            <li>Developed real-time state estimation algorithms using <Highlighter selector={HighlightTopic.Controls}>Extended Kalman Filters</Highlighter>, fusing GPS, IMU, motor data</li>
           </ul>
         </ResumeExperience>
         <ResumeExperience company="UBC Formula Electric" title="Software Director | 2022-2026" link="/work/formula">
@@ -205,14 +212,14 @@ export default function Home() {
             <UBCFE className="w-full h-full" />
           </div>
           <ul className="list-disc list-inside text-sm">
-            <li> Led 22 Software Devs to 21st (2023), 31st (2024), 46th (2025), in FSAE Michigan, passed all inspections/events first time in school history.  </li>
-            <li> Founded of autonomous driving division, designing visual feature detection, <Highlighter selector={HighlightTopic.Controls}>SLAM</Highlighter>, vehicle controls algorithms.  </li>
-            <li> Designed telemetry system, hosted on <Highlighter selector={HighlightTopic.Tool}>AWS</Highlighter>, on <Highlighter selector={HighlightTopic.Tool}>Influx SQL</Highlighter> database on <Highlighter selector={HighlightTopic.Tool}>Docker</Highlighter>, <Highlighter selector={HighlightTopic.Lang}>NextJS</Highlighter> Frontend, with <Highlighter selector={HighlightTopic.Tool}>WebSocket</Highlighter>/<Highlighter selector={HighlightTopic.Tool}>REST</Highlighter> APIs.  </li>
-            <li> Implemented and enforced <Highlighter selector={HighlightTopic.Lang}>C/C++</Highlighter> code style, eliminating all memory bugs at compile time, improved mock interface.  </li>
-            <li> Established validation team, no-car/HIL validation strategy with <Highlighter selector={HighlightTopic.Lang}>GitHub Actions</Highlighter> + code review, reduced prod bug reports -30%.  </li>
-            <li> Led the development of dashboard software in <Highlighter selector={HighlightTopic.Lang}>Flutter</Highlighter> on custom embedded <Highlighter selector={HighlightTopic.Tool}>Linux</Highlighter> distro in <Highlighter selector={HighlightTopic.Lang}>Yocto</Highlighter>, including async dart-ffi CAN.  </li>
-            <li> Developed All-Platform <Highlighter selector={HighlightTopic.Lang}>CMake</Highlighter> build system/package manager, reduced generation/cross-compile times by 70%.  </li>
-            <li> Implemented sensor processing in <Highlighter selector={HighlightTopic.Lang}>C</Highlighter> for 9 sensors, 3 communication protocols (ADC, I2C, SPI), broadcasting over CAN bus.  </li>
+            <li> Led ~25 Software Devs to 21st (2023), 31st (2024), 46th (2025), 67th (2026), in FSAE Michigan, passed all inspections/events first time in school history.  </li>
+            <li> Founded of autonomous driving division, built visual feature detection, <Highlighter selector={HighlightTopic.Controls}>SLAM</Highlighter>, <Highlighter selector={HighlightTopic.Controls}>vehicle controls algorithms</Highlighter></li>
+            <li> Designed telemetry system, using <Highlighter selector={HighlightTopic.Tool}>Influx SQL</Highlighter> database on <Highlighter selector={HighlightTopic.Tool}>Docker</Highlighter>, <Highlighter selector={HighlightTopic.Lang}>NextJS</Highlighter>, <Highlighter selector={HighlightTopic.Lang}>Rust</Highlighter> <Highlighter selector={HighlightTopic.Tool}>WebSocket</Highlighter>/<Highlighter selector={HighlightTopic.Tool}>REST</Highlighter> APIs.  </li>
+            <li> Implemented + enforced <Highlighter selector={HighlightTopic.Lang}>C/C++</Highlighter> code style, eliminating memory bugs at compile time, refactored mocks. </li>
+            <li> Established validation team, no-car/HIL validation with <Highlighter selector={HighlightTopic.Lang}>GitHub Actions</Highlighter>, reduced prod bug reports ~70%.  </li>
+            <li> Led introduction of dashboard software in <Highlighter selector={HighlightTopic.Lang}>Flutter</Highlighter> on embedded <Highlighter selector={HighlightTopic.Tool}>Linux</Highlighter> via <Highlighter selector={HighlightTopic.Lang}>Yocto</Highlighter>, with async dart-ffi CAN.</li>
+            <li> Developed cross platform <Highlighter selector={HighlightTopic.Lang}>CMake</Highlighter> build/package manager, reduced generation/cross-compile times by 70%.</li>
+            <li> Implemented sensor processing in <Highlighter selector={HighlightTopic.Lang}>C</Highlighter> for 9 sensors, 3 protocols (ADC, I2C, SPI), broadcasting over CAN bus.  </li>
           </ul>
         </ResumeExperience>
         <ResumeExperience company="UBC Competitive Programming Team" title="Division 1 Competitor | 2022-2026" link="/work/cp">
@@ -220,7 +227,7 @@ export default function Home() {
             <ICPC className="h-full w-full fill-white! transition-colors" override={true} />
           </div>
           <ul className="list-disc list-inside text-sm">
-            <li> Member of UBC Division 1 Team (&apos;23, &apos;24), competing in weekly contests, International Collegiate Programming Contest (ICPC) </li>
+            <li> Member of UBC Division 1 Team (&apos;23-&apos;26), competing in International Collegiate Programming Contest (ICPC) </li>
             <li> 2nd place in Division 2 at ICPC Pacific Northwest (2022), completed contest using <Highlighter selector={HighlightTopic.Lang}>Python</Highlighter> and <Highlighter selector={HighlightTopic.Lang}>C++</Highlighter>.  </li>
             <li> Achieved top 10% in Canadian Computing Competition Senior Division from Grade 10-12.  </li>
             <li> Developed and optimized complex data structures and algorithms based on mathematical principles </li>
@@ -231,10 +238,10 @@ export default function Home() {
             <JHY className="h-full w-full fill-white group-has-[.resume-link:hover]:fill-[#0CB3FE]" />
           </div>
           <ul className="list-disc list-inside text-sm">
-            <li>Established web presence for local (Ottawa) electronics business, enabling online catalogue/orders, deployed on Vercel.</li>
-            <li>Designed UX, implemented UI built with <Highlighter selector={HighlightTopic.Lang}>NextJS</Highlighter>/<Highlighter selector={HighlightTopic.Lang}>React</Highlighter> app in <Highlighter selector={HighlightTopic.Lang}>Typescript</Highlighter>, styling with <Highlighter selector={HighlightTopic.Lang}>TailwindCSS</Highlighter>, ShadCN components.</li>
-            <li>Developed CRUD backend API interfacing with <Highlighter selector={HighlightTopic.Lang}>PostgreSQL</Highlighter> database, <Highlighter selector={HighlightTopic.Tool}>PayPal</Highlighter> Orders/<Highlighter selector={HighlightTopic.Tool}>Stripe</Highlighter> Payment Intents Server-Side API.</li>
-            <li>Ensured confidence in functionality through tests implemented across the entire stack with <Highlighter selector={HighlightTopic.Tool}>Jest</Highlighter> and <Highlighter selector={HighlightTopic.Tool}>Playwright</Highlighter>.</li>
+            <li>Established web presence for electronics business, enabling online catalogue/orders, deployed on <Highlighter selector={HighlightTopic.Tool}>Vercel</Highlighter>.</li>
+            <li>Designed UX, implemented UI built with <Highlighter selector={HighlightTopic.Lang}>NextJS</Highlighter>/<Highlighter selector={HighlightTopic.Lang}>React</Highlighter> app in <Highlighter selector={HighlightTopic.Lang}>Typescript</Highlighter>, styling with <Highlighter selector={HighlightTopic.Lang}>TailwindCSS</Highlighter>, ShadCN</li>
+            <li>Developed CRUD API interfacing with <Highlighter selector={HighlightTopic.Lang}>PostgreSQL</Highlighter> database, <Highlighter selector={HighlightTopic.Tool}>PayPal</Highlighter> Orders/<Highlighter selector={HighlightTopic.Tool}>Stripe</Highlighter> Payment Intents API.</li>
+            <li>Ensured confidence in functionality through tests implemented across the entire stack with <Highlighter selector={HighlightTopic.Tool}>Jest</Highlighter>, <Highlighter selector={HighlightTopic.Tool}>Playwright</Highlighter>.</li>
           </ul>
         </ResumeExperience>
       </section>

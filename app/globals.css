@@ -1,6 +1,24 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
+@theme {
+  --extendo: 9%;
+
+  @keyframes highlightenter {
+    from {
+      width: 0;
+      left: calc(var(--extendo) / -2);
+    }
+
+    to {
+      width: calc(100% + var(--extendo));
+      left: calc(var(--extendo) / -2);
+    }
+  }
+
+  --animate-highlightenter: highlightenter 0.15s ease-in-out forwards;
+}
+
 :root {
   --foreground: rgb(0, 0, 0);
   --background-start: rgb(214, 219, 220);
