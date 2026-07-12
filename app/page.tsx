@@ -55,7 +55,7 @@ enum CardCompany {
   Rivian,
   ICPC,
   MLH,
-  LaptopRepair,
+  Repair,
   Tesla
 }
 
@@ -69,7 +69,7 @@ function CompanyLogo({ company }: { company: CardCompany }) {
       return <ICPC className="size-10" />;
     case CardCompany.MLH:
       return <MLH className="size-10" />;
-    case CardCompany.LaptopRepair:
+    case CardCompany.Repair:
       return <Wrench className="size-10 dark:fill-white" />;
     case CardCompany.Tesla:
       return <Tesla className="size-10" />;
@@ -262,7 +262,7 @@ export default function Home() {
           <Card title="Netlogger" company_logo={CardCompany.Rivian} link="/work/rivian#netlogger" image_url="/rivian/netlogger.png" />
           <Card title="Nexus" company_logo={CardCompany.Rivian} link="/work/rivian#nexus" image_url="/rivian/nexus.png" />
           <Card title="Booktrail" company_logo={CardCompany.MLH} link="/projects/booktrail" image_url="/hackathon/booktrail.png" />
-          <Card title="Edwin's Laptop Repair Shop" company_logo={CardCompany.LaptopRepair} link="/projects/laptop" image_url="/laptop/xps.jpeg" />
+          <Card title="Edwin's Repair Shop" company_logo={CardCompany.Repair} link="/projects/repair" image_url="/repair/xps.jpeg" />
         </div>
       </section>
 

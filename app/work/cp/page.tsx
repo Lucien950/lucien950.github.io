@@ -35,7 +35,7 @@ export default function CompetitiveProgramming() {
 					</div>
 				</Link>
 
-				<Link href="/writeups" className="col-span-2">
+				<Link href="/writeups" className="col-span-full">
 					<div className="my-4 border-2 border-gray-800 rounded-lg overflow-clip pb-4">
 						<img src="/cp/main.jpeg" alt="" className="h-56 w-full object-cover" />
 						<h3 className="text-lg font-semibold ml-2 mt-2">Writeups</h3>

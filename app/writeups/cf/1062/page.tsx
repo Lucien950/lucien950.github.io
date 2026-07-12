@@ -409,13 +409,13 @@ export default function Round1062() {
 
 				<p>
 					Hence, the final algorithm is as follows:
-					<ol>
-						<li>Run a DFS to find the size of each subtree, including the "subtree" containing the parent</li>
-						<li> For each node, remove each subtree, and check if within the remaining subtrees if there are at least two subtrees which combined have at least k nodes. </li>
-						<li>If so, add the size of the removed subtree to the final answer</li>
-						<li>Remember to also consider the edge case where the tree is rooted at the node in question</li>
-					</ol>
 				</p>
+				<ol>
+					<li>Run a DFS to find the size of each subtree, including the "subtree" containing the parent</li>
+					<li> For each node, remove each subtree, and check if within the remaining subtrees if there are at least two subtrees which combined have at least k nodes. </li>
+					<li>If so, add the size of the removed subtree to the final answer</li>
+					<li>Remember to also consider the edge case where the tree is rooted at the node in question</li>
+				</ol>
 
 				<h2>Problem G</h2>
 				<p>
