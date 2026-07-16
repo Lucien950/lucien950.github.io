@@ -253,10 +253,9 @@ export default function Home() {
         <div className="columns-lg *:break-inside-avoid gap-6 mt-4 mx-4">
           <Card title="Vehicle Firmware and Build System" company_logo={CardCompany.UBCFE} link="/projects/formula_firmware" image_url="/formula/fsm.png" />
           <Card title="Competitive Programming Writeups" company_logo={CardCompany.ICPC} link="/writeups" image_url="/cp/main.jpeg" />
-          <Card title="Vehicle Controls" company_logo={CardCompany.UBCFE} link="/projects/controls" image_url="/formula/controls.png" />
+          <Card title="Vehicle Controls" company_logo={CardCompany.UBCFE} link="/projects/vehicle_controls" image_url="/formula/controls.png" />
           <Card title="PseudoECU" company_logo={CardCompany.Rivian} link="/work/rivian#pseudoecu" image_url="/rivian/pecu_docs.png" />
           <Card title="Dashboard Electronics" company_logo={CardCompany.UBCFE} link="/projects/dashboard" image_url="/formula/comp_dashboard.jpg" image_height_px={330} />
-          <Card title="Vehicle Modelling" company_logo={CardCompany.UBCFE} link="/projects/sim" image_url="/formula/vehicle_model.png" />
           <Card title="Tracksight" company_logo={CardCompany.UBCFE} link="/projects/tracksight" image_url="/formula/tracksight.png" />
           <Card title="Rivsniffer" company_logo={CardCompany.Rivian} link="/work/rivian#rivsniffer" image_url="/rivian/rivsniffer.png" />
           <Card title="Netlogger" company_logo={CardCompany.Rivian} link="/work/rivian#netlogger" image_url="/rivian/netlogger.png" />

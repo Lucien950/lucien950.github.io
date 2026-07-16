@@ -24,6 +24,7 @@ export default function Writeups() {
 					<h1 className={`text-8xl uppercase font-medium leading-[0.8] mr-4 ${albra.className}`}>Codeforces</h1>
 					<WriteupLink link="/cf/1062">Round #1062</WriteupLink>
 					<WriteupLink link="/cf/1071">Round #1071</WriteupLink>
+					<WriteupLink link="/cf/1109">Round #1109</WriteupLink>
 					<WriteupLink link="/cf/edu187">Educational #187</WriteupLink>
 					<div className="grow-999"></div>
 				</div>

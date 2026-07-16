@@ -55,33 +55,57 @@ export default function FormulaPage() {
 				<hr className="col-span-full mb-4 opacity-35" />
 
 				<h2 className="col-span-full font-bold text-xl">MY PROJECTS</h2>
+				<div className="mb-4">
+					<Link href="/projects/formula_firmware" className="relative block h-36 mb-2">
+						<ExportedImage fill src="/formula/fsm.png" alt="FSM" className="object-cover" />
+					</Link>
+					Firmware
+				</div>
+				<div className="mb-4">
+					<Link href="/projects/vehicle_controls" className="relative block h-36 mb-2">
+						<ExportedImage fill src="/formula/controls.png" alt="Vehicle Controls" className="object-cover" />
+					</Link>
+					Vehicle Controls
+				</div>
+				<div className="mb-4">
+					<Link href="/projects/tracksight" className="relative block h-36 mb-2">
+						<ExportedImage fill src="/formula/tracksight.png" alt="Tracksight" className="object-cover" />
+					</Link>
+					Tracksight
+				</div>
+				<div className="mb-4">
+					<Link href="/projects/dashboard" className="relative block h-36 mb-2">
+						<ExportedImage fill src="/formula/comp_dashboard.jpg" alt="Dashboard" className="object-cover" />
+					</Link>
+					Dashboard
+				</div>
 
 				<h2 className="col-span-full font-bold text-xl">SOFTWARE TEAM</h2>
 				<div className="relative h-76 mb-4">
-					<ExportedImage fill src={software_team_22} alt="Software Team 2022" className="object-cover" />
+					<ExportedImage fill src={software_team_22} alt="Software Team 2022" className="object-cover" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 100vw" />
 				</div>
 				<div className="relative h-76 mb-4">
-					<ExportedImage fill src={software_team_23} alt="Software Team 2023" className="object-cover" />
+					<ExportedImage fill src={software_team_23} alt="Software Team 2023" className="object-cover" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 100vw" />
 				</div>
 				<div className="relative h-76 mb-4">
-					<ExportedImage fill src={software_team_24} alt="Software Team 2024" className="object-cover" />
+					<ExportedImage fill src={software_team_24} alt="Software Team 2024" className="object-cover" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 100vw" />
 				</div>
 				<div className="relative h-76 mb-4">
-					<ExportedImage fill src={software_team_25} alt="Software Team 2025" className="object-cover" />
+					<ExportedImage fill src={software_team_25} alt="Software Team 2025" className="object-cover" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 100vw" />
 				</div>
 
 				<h2 className="col-span-full font-bold text-xl">COMPETITION</h2>
 				<div className="relative h-85 mb-4">
-					<ExportedImage fill src={comp_23} alt="" className="object-cover" />
+					<ExportedImage fill src={comp_23} alt="" className="object-cover" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 100vw" />
 				</div>
 				<div className="relative h-85 mb-4">
-					<ExportedImage fill src={comp_24} alt="" className="object-cover" />
+					<ExportedImage fill src={comp_24} alt="" className="object-cover" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 100vw" />
 				</div>
 				<div className="relative h-85 mb-4">
-					<ExportedImage fill src={comp_25} alt="" className="object-cover" />
+					<ExportedImage fill src={comp_25} alt="" className="object-cover" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 100vw" />
 				</div>
 				<div className="relative h-85 mb-4">
-					<ExportedImage fill src={comp_26} alt="" className="object-cover" />
+					<ExportedImage fill src={comp_26} alt="" className="object-cover" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 100vw" />
 				</div>
 
 				<div className="col-span-full" >

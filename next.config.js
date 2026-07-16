@@ -16,6 +16,21 @@ const nextConfig = {
         nextImageExportOptimizer_generateAndUseBlurImages: "true",
         nextImageExportOptimizer_remoteImageCacheTTL: "0",
     },
+    webpack(config) {
+        config.module.rules.push({
+            test: /\.svg$/i,
+            use: ['@svgr/webpack'],
+        });
+        return config;
+    },
+    turbopack: {
+        rules: {
+            '*.svg': {
+                loaders: ['@svgr/webpack'],
+                as: '*.js',
+            },
+        },
+    },
 }
 
 module.exports = nextConfig
