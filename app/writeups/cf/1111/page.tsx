@@ -7,10 +7,181 @@ import FigD from "./1111d.svg"
 import FigDDark from "./1111d_dark.svg"
 import ShikiHighlighter from "react-shiki";
 
-const A = String.raw``
-const B = String.raw``
-const C = String.raw``
-const D = String.raw``
+const A = String.raw`int main() {
+  int t;
+  cin >> t;
+  while (t--) {
+	int n;
+	cin >> n;
+	string s;
+	cin >> s;
+	int streak = 0;
+	int max_s = 0;
+	for (int i = 0; i < n; i++) {
+	  switch (s[i]) {
+	  case '*':
+		max_s = max(max_s, streak);
+		streak = 0;
+		break;
+	  case '#':
+		streak += 1;
+		break;
+	  default:;
+	  }
+	}
+	max_s = max(max_s, streak);
+	cout << (max_s + 1) / 2 << endl;
+  }
+}`
+const B = String.raw`int main() {
+  int t;
+  cin >> t;
+  while (t--) {
+	uint32_t n, k, m;
+	cin >> n >> k >> m;
+	if (k > n) {
+	  // otherwise, there is no contiguous subarray of length k
+	  cout << "NO\n";
+	  continue;
+	}
+	// k < n
+	if (m < k) { // namely we need m/k>=1 aka m >= k
+	  cout << "NO\n";
+	  continue;
+	}
+	// m/k>=1
+
+	cout << "YES\n";
+	const uint32_t moverk = m / k;
+	for (size_t i = 0; i < k - 1; i++) {
+	  cout << moverk << ' ';
+	}
+	cout << (moverk + m % k) << ' ';
+	for (size_t i = 0; i < n - k; i++) {
+	  cout << "1 ";
+	}
+	cout << '\n';
+  }
+  cout << flush;
+}`
+const C = String.raw`int main() {
+  static vector<bool> a, b;
+  constexpr size_t MAX_N = 2e5;
+  a.reserve(MAX_N);
+  b.reserve(MAX_N);
+
+  int t;
+  cin >> t;
+  while (t--) {
+	size_t n;
+	cin >> n;
+	a.resize(n);
+	b.resize(n);
+	for (size_t i = 0; i < n; i++) {
+	  int c;
+	  cin >> c;
+	  a[i] = c == 1;
+	}
+	for (size_t i = 0; i < n; i++) {
+	  int c;
+	  cin >> c;
+	  b[i] = c == 1;
+	}
+
+	uint32_t one_zero_flips = 0;
+	bool has_zero_one_flips = false, has_zero_zeros = false, has_one_one = false;
+	for (size_t i = 0; i < n; i++) {
+	  one_zero_flips += a[i] and not b[i];
+	  has_zero_one_flips |= not a[i] and b[i];
+	  has_zero_zeros |= not a[i] and not b[i];
+	  has_one_one |= a[i] and b[i];
+	}
+
+	if (one_zero_flips == 0) {                // no 1->0s
+	  if (has_zero_one_flips) {               // namely it's only 0->1 flips
+		if (has_zero_zeros and has_one_one) { // has 0 -> 0
+		  cout << "2\n";
+		  continue;
+		}
+		// note that 1->1s do nothing as they get converted to 0->1s
+		cout << "-1\n";
+		continue;
+	  }
+	  // there are no flips to do
+	  cout << "0\n";
+	} else if (one_zero_flips % 2 == 1) {
+	  // note we can merge the 0->1 flips into this flip
+	  cout << "1\n";
+	} else {
+	  // note we can merge the 0->1 flips into the first flip
+	  cout << "2\n";
+	}
+  }
+}`
+const D = String.raw`bool works(const uint32_t n, const span<uint32_t> a, const span<uint32_t> a_sorted) {
+  const size_t k = 1 << n;
+  // check if the frequency of elements in chunks of k are the same
+  vector<uint32_t> a_buf;
+  a_buf.reserve(k);
+
+  for (size_t i = 0; i < a.size(); i += 2 * k) {
+	a_buf.clear();
+	const size_t count = min(2 * k, a.size() - i);
+
+	ranges::copy(a.subspan(i, count), back_inserter(a_buf));
+	ranges::sort(a_buf);
+
+	if (!ranges::equal(a_buf, a_sorted.subspan(i, count))) {
+	  return false;
+	}
+  }
+  return true;
+}
+
+int main() {
+  int t;
+  constexpr size_t MAX_N = 1e6;
+  static array<uint32_t, MAX_N> a_buf;
+  static array<uint32_t, MAX_N> a_sorted_buf;
+  cin >> t;
+  while (t--) {
+	uint32_t n, q;
+	cin >> n >> q;
+	const span a(a_buf.data(), n);
+	const span a_sorted(a_sorted_buf.data(), n);
+	assert(q == 0);
+
+	for (size_t i = 0; i < n; i++) {
+	  cin >> a[i];
+	}
+	for (size_t i = 0; i < q; i++) {
+	  // we'll do this in d2.cpp
+	}
+
+	ranges::copy(a, a_sorted.begin());
+	ranges::sort(a_sorted);
+
+	if (ranges::equal(a, a_sorted)) {
+	  cout << 0 << '\n';
+	  continue;
+	}
+
+	// figure out if a is k-sortable (with k = 1<<n)
+	int32_t l = 0, r = 20;
+	while (l < r) {
+	  // do something with mid
+	  if (const uint32_t mid = (l + r) / 2; works(mid, a, a_sorted)) {
+		// works :)
+		r = mid;
+	  } else {
+		// doesn't work :(
+		l = mid + 1;
+	  }
+	}
+	cout << (1 << l) << '\n';
+  }
+  cout << flush;
+}`
 const E = String.raw``
 const F = String.raw``
 
@@ -163,6 +334,7 @@ export default function Round1111() {
 					<ReactKatex>
 						More intuiatively, the result above shows that within each $2k$ block, arbitrary swaps can be conducted.
 						However, you can swap outside of your $2k$ block, but only with the same $2k$ block.
+						Hence, if each $2k$ block can be sorted, then the entire list can be sorted.
 					</ReactKatex>
 				</p>
 				<p>To find the minimum k, binary search can be employed. This is because k-sortability is monotonic on k.</p>
