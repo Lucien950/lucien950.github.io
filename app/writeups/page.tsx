@@ -25,6 +25,7 @@ export default function Writeups() {
 					<WriteupLink link="/cf/1062">Round #1062</WriteupLink>
 					<WriteupLink link="/cf/1071">Round #1071</WriteupLink>
 					<WriteupLink link="/cf/1109">Round #1109</WriteupLink>
+					<WriteupLink link="/cf/1111">Round #1111</WriteupLink>
 					<WriteupLink link="/cf/edu187">Educational #187</WriteupLink>
 					<div className="grow-999"></div>
 				</div>
